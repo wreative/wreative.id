@@ -1,5 +1,5 @@
 import React from "react";
-import { Linkedin, Instagram, Twitter, ArrowUpRight } from "lucide-react";
+import { Linkedin, Instagram, ArrowUpRight, Youtube } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -124,40 +124,38 @@ const Footer = () => {
             <h4 className="font-semibold mb-6">Sosial Media</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/wreative"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
               >
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/wreative"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
               >
                 <Instagram className="h-4 w-4" />
                 <span className="sr-only">Instagram</span>
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@wreative"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
               >
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
+                <Youtube className="h-4 w-4" />
+                <span className="sr-only">YouTube</span>
               </a>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border flex items-center justify-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} Wreative. Hak cipta dilindungi.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">
-              Syarat & Ketentuan
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Kebijakan Privasi
-            </a>
-          </div>
         </div>
       </div>
     </footer>
