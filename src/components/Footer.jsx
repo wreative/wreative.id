@@ -117,6 +117,17 @@ const Footer = () => {
                   <ArrowUpRight className="h-3 w-3 opacity-50 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://wreative.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-primary transition-colors group"
+                >
+                  wreative.com
+                  <ArrowUpRight className="h-3 w-3 opacity-50 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </li>
             </ul>
           </div>
 
