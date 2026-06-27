@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -187,10 +187,30 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas</title>
-        <meta
-          name="description"
-          content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code."
-        />
+        <meta name="description" content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code." />
+        <link rel="canonical" href="https://wreative.id/" />
+        <meta property="og:title" content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas" />
+        <meta property="og:description" content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code." />
+        <meta property="og:url" content="https://wreative.id/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://wreative.id/icons/og-image.png" />
+        <meta property="og:locale" content="id_ID" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas" />
+        <meta name="twitter:description" content="Bangun website dan aplikasi mobile profesional bersama Wreative." />
+        <meta name="twitter:image" content="https://wreative.id/icons/og-image.png" />
+        <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas",
+            "description": "Bangun website dan aplikasi mobile profesional bersama Wreative.",
+            "url": "https://wreative.id/",
+            "inLanguage": "id",
+            "isPartOf": { "@type": "WebSite", "@id": "https://wreative.id/#website" }
+          })}
+        </script>
       </Helmet>
 
       <main className="overflow-hidden">

@@ -1,5 +1,6 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 import { createLogger, defineConfig } from 'vite';
 import inlineEditPlugin from './plugins/visual-editor/vite-plugin-react-inline-editor.js';
 import editModeDevPlugin from './plugins/visual-editor/vite-plugin-edit-mode.js';
@@ -292,7 +293,45 @@ export default defineConfig({
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), selectionModePlugin(), iframeRouteRestorationPlugin(), pocketbaseAuthPlugin()] : []),
 		react(),
-		addTransformIndexHtml
+		addTransformIndexHtml,
+		VitePWA({
+			registerType: 'autoUpdate',
+			devOptions: { enabled: false },
+			includeAssets: ['icons/favicon.svg', 'icons/favicon-16x16.png', 'icons/favicon-32x32.png', 'icons/apple-touch-icon.png'],
+			manifest: false,
+			workbox: {
+				globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+				runtimeCaching: [
+					{
+						urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'google-fonts-cache',
+							expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+							cacheableResponse: { statuses: [0, 200] },
+						},
+					},
+					{
+						urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'gstatic-fonts-cache',
+							expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+							cacheableResponse: { statuses: [0, 200] },
+						},
+					},
+					{
+						urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'unsplash-images-cache',
+							expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 30 },
+							cacheableResponse: { statuses: [0, 200] },
+						},
+					},
+				],
+			},
+		}),
 	],
 	server: {
 		port: 3000,

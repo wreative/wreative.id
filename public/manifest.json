@@ -1,0 +1,52 @@
+{
+  "name": "Wreative - Jasa Pembuatan Website & Aplikasi",
+  "short_name": "Wreative",
+  "description": "Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Konsultasi Gratis",
+      "short_name": "Konsultasi",
+      "description": "Mulai konsultasi gratis untuk proyek Anda",
+      "url": "/#contact",
+      "icons": [{ "src": "/icons/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Layanan",
+      "short_name": "Layanan",
+      "description": "Lihat layanan kami",
+      "url": "/#services",
+      "icons": [{ "src": "/icons/favicon.svg", "sizes": "any" }]
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,42 @@
+# Wreative - Jasa Pembuatan Website & Aplikasi
+
+## Pages
+
+- [/](#page-home): Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas
+
+## Website (/)
+
+Halaman landing page utama Wreative yang menampilkan:
+
+- Hero section dengan CTA "Konsultasi Gratis" dan "Lihat Portfolio"
+- Services section: Website, Web Application, Mobile App
+- Portfolio section dengan link ke website dan mobile portfolio
+- Why Choose Us section dengan 9 keunggulan (Clean Code, UI Modern, Responsive, SEO Friendly, Fast Performance, dll)
+- Workflow section dengan 6 langkah proses kerja
+- Testimonials section
+- Contact CTA section
+
+## Navigation
+
+- Beranda (#home)
+- Layanan (#services)
+- Portfolio (#portfolio)
+- Mengapa Kami (#why-us)
+- Testimoni (#testimonials)
+- Kontak (#contact)
+
+## Services
+
+- **Website**: Company Profile, Landing Page, Custom Website, Sistem Internal
+- **Web Application**: Dashboard Analitik, Aplikasi SaaS, Sistem ERP & CRM, Sistem Manajemen
+- **Mobile App**: Aplikasi Android & iOS, Pengembangan dengan Flutter
+
+## Contact
+
+- WhatsApp: https://link.wreative.com/wa
+- Website Portfolio: https://link.wreative.com/website-portfolio
+- Mobile Portfolio: https://link.wreative.com/mobile-portfolio
+
+---
+Generated manually. Edit this file to customize LLMs.txt content.
+Last updated: 2026-06-27
