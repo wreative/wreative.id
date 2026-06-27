@@ -11,11 +11,10 @@
   "lang": "id",
   "dir": "ltr",
   "categories": ["business", "productivity", "utilities"],
-  "icons": [
-    {
-      "src": "/icons/favicon.svg",
+  "icons": [{
+      "src": "/icons/favicon.ico",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/x-icon",
       "purpose": "any"
     },
     {
@@ -31,20 +30,25 @@
       "purpose": "any maskable"
     }
   ],
-  "shortcuts": [
-    {
+  "shortcuts": [{
       "name": "Konsultasi Gratis",
       "short_name": "Konsultasi",
       "description": "Mulai konsultasi gratis untuk proyek Anda",
       "url": "/#contact",
-      "icons": [{ "src": "/icons/favicon.svg", "sizes": "any" }]
+      "icons": [{
+        "src": "/icons/favicon.ico",
+        "sizes": "any"
+      }]
     },
     {
       "name": "Layanan",
       "short_name": "Layanan",
       "description": "Lihat layanan kami",
       "url": "/#services",
-      "icons": [{ "src": "/icons/favicon.svg", "sizes": "any" }]
+      "icons": [{
+        "src": "/icons/favicon.ico",
+        "sizes": "any"
+      }]
     }
   ],
   "screenshots": [],
