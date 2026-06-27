@@ -319,6 +319,7 @@ export default defineConfig({
 		},
 	},
 	build: {
+		outDir: 'public',
 		rollupOptions: {
 			external: [
 				'@babel/parser',
