@@ -84,7 +84,7 @@ const HomePage = () => {
         "Sistem ERP & CRM",
         "Sistem Manajemen",
       ],
-      image: "/public/images/web-application.webp",
+      image: "/images/web-application.webp",
     },
     {
       id: "mobile",
@@ -98,7 +98,7 @@ const HomePage = () => {
         "Siap Publish ke Play Store",
         "Siap Publish ke App Store",
       ],
-      image: "/public/images/mobile-app.webp",
+      image: "/images/mobile-app.webp",
     },
   ];
 
@@ -309,7 +309,7 @@ const HomePage = () => {
                   className="absolute top-0 right-0 w-4/5 h-[80%] rounded-2xl overflow-hidden border border-border premium-shadow"
                 >
                   <img
-                    src="/public/images/aplikasi-berkualitas.webp"
+                    src="/images/aplikasi-berkualitas.webp"
                     alt="Antarmuka web modern dengan statistik"
                     className="w-full h-full object-cover"
                   />
@@ -320,7 +320,7 @@ const HomePage = () => {
                   className="absolute bottom-0 left-0 w-3/5 h-[60%] rounded-2xl overflow-hidden border-4 border-background premium-shadow-hover z-10"
                 >
                   <img
-                    src="/public/images/bangun-website.webp"
+                    src="/images/bangun-website.webp"
                     alt="Pengembangan website dan kolaborasi tim"
                     className="w-full h-full object-cover"
                   />
@@ -422,8 +422,7 @@ const HomePage = () => {
                   </div>
                   <h3 className="mb-3">Mobile Portfolio</h3>
                   <p className="text-muted-foreground mb-8">
-                    Eksplorasi aplikasi mobile yang telah dirilis ke public
-                    store.
+                    Eksplorasi aplikasi mobile yang telah dirilis ke store.
                   </p>
                   <Button
                     variant="outline"
