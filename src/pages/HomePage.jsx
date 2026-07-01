@@ -84,7 +84,7 @@ const HomePage = () => {
         "Sistem ERP & CRM",
         "Sistem Manajemen",
       ],
-      image: "https://images.unsplash.com/photo-1524221629551-6dd14def5ffd",
+      image: "/public/images/web-application.webp",
     },
     {
       id: "mobile",
@@ -98,7 +98,7 @@ const HomePage = () => {
         "Siap Publish ke Play Store",
         "Siap Publish ke App Store",
       ],
-      image: "https://images.unsplash.com/photo-1604478373812-0ef15d185d90",
+      image: "/public/images/mobile-app.webp",
     },
   ];
 
@@ -187,28 +187,53 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas</title>
-        <meta name="description" content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code." />
+        <meta
+          name="description"
+          content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code."
+        />
         <link rel="canonical" href="https://wreative.id/" />
-        <meta property="og:title" content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas" />
-        <meta property="og:description" content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code." />
+        <meta
+          property="og:title"
+          content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas"
+        />
+        <meta
+          property="og:description"
+          content="Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code."
+        />
         <meta property="og:url" content="https://wreative.id/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://wreative.id/icons/og-image.png" />
+        <meta
+          property="og:image"
+          content="https://wreative.id/icons/og-image.png"
+        />
         <meta property="og:locale" content="id_ID" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas" />
-        <meta name="twitter:description" content="Bangun website dan aplikasi mobile profesional bersama Wreative." />
-        <meta name="twitter:image" content="https://wreative.id/icons/og-image.png" />
+        <meta
+          name="twitter:title"
+          content="Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas"
+        />
+        <meta
+          name="twitter:description"
+          content="Bangun website dan aplikasi mobile profesional bersama Wreative."
+        />
+        <meta
+          name="twitter:image"
+          content="https://wreative.id/icons/og-image.png"
+        />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas",
-            "description": "Bangun website dan aplikasi mobile profesional bersama Wreative.",
-            "url": "https://wreative.id/",
-            "inLanguage": "id",
-            "isPartOf": { "@type": "WebSite", "@id": "https://wreative.id/#website" }
+            name: "Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas",
+            description:
+              "Bangun website dan aplikasi mobile profesional bersama Wreative.",
+            url: "https://wreative.id/",
+            inLanguage: "id",
+            isPartOf: {
+              "@type": "WebSite",
+              "@id": "https://wreative.id/#website",
+            },
           })}
         </script>
       </Helmet>
@@ -284,7 +309,7 @@ const HomePage = () => {
                   className="absolute top-0 right-0 w-4/5 h-[80%] rounded-2xl overflow-hidden border border-border premium-shadow"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1678690832311-bb6e361989ca"
+                    src="/public/images/aplikasi-berkualitas.webp"
                     alt="Antarmuka web modern dengan statistik"
                     className="w-full h-full object-cover"
                   />
@@ -295,7 +320,7 @@ const HomePage = () => {
                   className="absolute bottom-0 left-0 w-3/5 h-[60%] rounded-2xl overflow-hidden border-4 border-background premium-shadow-hover z-10"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f"
+                    src="/public/images/bangun-website.webp"
                     alt="Pengembangan website dan kolaborasi tim"
                     className="w-full h-full object-cover"
                   />
