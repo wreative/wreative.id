@@ -1,0 +1,102 @@
+---
+import Icon from './Icon.astro'
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Budi Santoso',
+    role: 'Founder',
+    company: 'Retail Nusantara',
+    industry: 'UMKM',
+    content:
+      'Kami sebelumnya kesulitan mencari jasa pembuatan website yang benar-benar paham kebutuhan bisnis kami. Setelah bekerja sama dengan Wreative, website profesional yang dibuat sangat membantu meningkatkan penjualan online kami secara signifikan.',
+    initials: 'BS',
+    color: 'bg-blue-100 text-blue-700',
+  },
+  {
+    id: 2,
+    name: 'Sarah Wijaya',
+    role: 'CTO',
+    company: 'TechLogis',
+    industry: 'Startup',
+    content:
+      'Sebagai startup logistik, kami butuh aplikasi custom yang scalable dan handal. Wreative terbukti sebagai developer terpercaya yang mampu menerjemahkan proses bisnis kompleks kami ke dalam sistem yang mudah digunakan.',
+    initials: 'SW',
+    color: 'bg-emerald-100 text-emerald-700',
+  },
+  {
+    id: 3,
+    name: 'Andi Pratama',
+    role: 'Direktur',
+    company: 'PT Maju Bersama',
+    industry: 'Perusahaan',
+    content:
+      'Ekspansi ke ranah mobile sangat krusial bagi perusahaan kami. Layanan jasa pembuatan aplikasi dari Wreative menghasilkan aplikasi mobile android ios yang stabil, cepat, dan disukai oleh ribuan pelanggan kami.',
+    initials: 'AP',
+    color: 'bg-purple-100 text-purple-700',
+  },
+  {
+    id: 4,
+    name: 'Diana Lestari',
+    role: 'Konsultan',
+    company: 'Diana Consults',
+    industry: 'Consulting',
+    content:
+      'Tampilan website profesional sangat penting untuk personal branding saya. Tim Wreative tidak hanya mendesain antarmuka yang elegan, tapi juga memastikan performanya optimal di semua perangkat.',
+    initials: 'DL',
+    color: 'bg-orange-100 text-orange-700',
+  },
+]
+---
+
+<section
+  id="testimonials"
+  class="section-padding bg-secondary/30 border-y border-border overflow-hidden"
+>
+  <div class="container-custom">
+    <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="mb-4">Kisah Sukses Klien Kami</h2>
+      <p class="text-muted-foreground text-lg">
+        Kepercayaan yang terbayarkan melalui hasil yang nyata, terukur, dan berdampak langsung pada
+        pertumbuhan bisnis.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      {
+        testimonials.map((testimonial, i) => (
+          <div
+            data-reveal
+            data-reveal-delay={i * 150}
+            class="bg-background border border-border rounded-2xl p-8 premium-shadow transition-all duration-300 hover:border-primary/30 hover:premium-shadow-hover hover:-translate-y-1 hover:scale-[1.01] relative"
+          >
+            <Icon name="quote" class="absolute top-8 right-8 w-10 h-10 text-muted/50" />
+
+            <p class="text-foreground leading-relaxed mb-8 relative z-10">
+              "{testimonial.content}"
+            </p>
+
+            <div class="flex items-center gap-4 mt-auto">
+              <div
+                class={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${testimonial.color}`}
+              >
+                {testimonial.initials}
+              </div>
+              <div>
+                <h4 class="font-semibold text-foreground">{testimonial.name}</h4>
+                <p class="text-sm text-muted-foreground">
+                  {testimonial.role}, {testimonial.company}
+                </p>
+              </div>
+              <div class="ml-auto">
+                <span class="inline-block px-3 py-1 rounded-full bg-secondary text-xs font-medium text-muted-foreground">
+                  {testimonial.industry}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

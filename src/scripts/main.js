@@ -43,7 +43,7 @@ window.addEventListener('scroll', onScroll, { passive: true })
 onScroll()
 
 // Mobile menu
-const menuToggle = document.querySelector('[data-menu-toggle]')
+const menuToggles = document.querySelectorAll('[data-menu-toggle]')
 const menu = document.querySelector('[data-menu]')
 const menuOverlay = document.querySelector('[data-menu-overlay]')
 const closeMenu = () => {
@@ -51,10 +51,12 @@ const closeMenu = () => {
   menuOverlay?.classList.remove('is-open')
   document.body.classList.remove('overflow-hidden')
 }
-menuToggle?.addEventListener('click', () => {
-  const open = menu?.classList.toggle('is-open')
-  menuOverlay?.classList.toggle('is-open', open)
-  document.body.classList.toggle('overflow-hidden', open)
+menuToggles.forEach((menuToggle) => {
+  menuToggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('is-open')
+    menuOverlay?.classList.toggle('is-open', open)
+    document.body.classList.toggle('overflow-hidden', open)
+  })
 })
 menuOverlay?.addEventListener('click', closeMenu)
 menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))

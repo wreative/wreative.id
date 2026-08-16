@@ -1,5 +1,7 @@
 ---
-import App from '../components/App.jsx'
+import Header from '../components/Header.astro'
+import HomePage from '../components/HomePage.astro'
+import Footer from '../components/Footer.astro'
 import '../index.css'
 
 const title = 'Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas'
@@ -136,6 +138,11 @@ const ogImage = 'https://wreative.id/icons/og-image.png'
   </head>
 
   <body>
-    <App client:load />
+    <Header />
+    <div class="flex-grow">
+      <HomePage />
+    </div>
+    <Footer />
+    <script src="../scripts/main.js"></script>
   </body>
 </html>

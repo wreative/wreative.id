@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config'
-import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import AstroPWA from '@vite-pwa/astro'
 import { fileURLToPath } from 'node:url'
@@ -8,7 +7,6 @@ export default defineConfig({
   site: 'https://wreative.id',
   output: 'static',
   integrations: [
-    react(),
     AstroPWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: false },
