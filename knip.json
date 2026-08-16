@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignore": [".agents/**", ".remember/**"],
+  "entry": ["src/scripts/main.js"],
+  "tags": ["-lintignore"]
+}

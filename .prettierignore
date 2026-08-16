@@ -1,0 +1,10 @@
+dist
+node_modules
+.astro
+public
+pnpm-lock.yaml
+package-lock.json
+.agents
+.superpowers
+.remember
+docs

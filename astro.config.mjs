@@ -1,19 +1,20 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import AstroPWA from '@vite-pwa/astro';
-import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'astro/config'
+import tailwindcss from '@tailwindcss/vite'
+import AstroPWA from '@vite-pwa/astro'
+import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
   site: 'https://wreative.id',
   output: 'static',
   integrations: [
-    react(),
-    tailwind({ applyBaseStyles: false }),
     AstroPWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: false },
-      includeAssets: ['icons/favicon-16x16.png', 'icons/favicon-32x32.png', 'icons/apple-touch-icon.png'],
+      includeAssets: [
+        'icons/favicon-16x16.png',
+        'icons/favicon-32x32.png',
+        'icons/apple-touch-icon.png',
+      ],
       manifest: false,
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
@@ -50,10 +51,11 @@ export default defineConfig({
     }),
   ],
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
   },
-});
+})

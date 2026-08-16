@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  service: {
+    id: string
+    icon: string
+    title: string
+    description: string
+    items: string[]
+    image?: string
+  }
+  index: number
+}
+const { service, index } = Astro.props
+---
+
+<div
+  id={service.id}
+  data-reveal
+  data-reveal-delay={index * 150}
+  class="scroll-m-32 bg-background border border-border rounded-2xl p-8 premium-shadow transition-all duration-300 hover:border-primary/30 hover:premium-shadow-hover hover:-translate-y-1 hover:scale-[1.01]"
+>
+  <div class="flex items-center gap-4 mb-6">
+    <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-primary">
+      <Icon name={service.icon} class="w-6 h-6" />
+    </div>
+    <h3 class="text-2xl m-0">{service.title}</h3>
+  </div>
+
+  <p class="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+    {service.description}
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-4 mb-8">
+    {
+      service.items.map((item) => (
+        <div class="flex items-start gap-3">
+          <Icon name="check-circle-2" class="w-5 h-5 text-primary shrink-0 mt-0.5" />
+          <span class="font-medium text-foreground">{item}</span>
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    service.image && (
+      <div class="rounded-xl overflow-hidden border border-border bg-muted aspect-video relative group">
+        <img
+          src={service.image}
+          alt={`Ilustrasi ${service.title}`}
+          loading="lazy"
+          decoding="async"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
+    )
+  }
+</div>
