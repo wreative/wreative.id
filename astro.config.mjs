@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import AstroPWA from '@vite-pwa/astro';
 import { fileURLToPath } from 'node:url';
 
@@ -9,7 +9,6 @@ export default defineConfig({
   output: 'static',
   integrations: [
     react(),
-    tailwind({ applyBaseStyles: false }),
     AstroPWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: false },
@@ -50,6 +49,7 @@ export default defineConfig({
     }),
   ],
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
