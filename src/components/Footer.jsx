@@ -1,23 +1,23 @@
-import React from "react";
-import { Linkedin, Instagram, ArrowUpRight, Youtube } from "lucide-react";
+import React from 'react'
+import { Linkedin, Instagram, ArrowUpRight, Youtube } from 'lucide-react'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   const scrollToSection = (e, href) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
+    e.preventDefault()
+    const element = document.querySelector(href)
     if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
+      const offset = 80
+      const bodyRect = document.body.getBoundingClientRect().top
+      const elementRect = element.getBoundingClientRect().top
 
       window.scrollTo({
         top: elementRect - bodyRect - offset,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
     }
-  };
+  }
 
   return (
     <footer className="bg-background border-t border-border pt-16 pb-8">
@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <a
               href="#home"
-              onClick={(e) => scrollToSection(e, "#home")}
+              onClick={(e) => scrollToSection(e, '#home')}
               className="inline-block mb-6 transition-opacity hover:opacity-80"
             >
               <img
@@ -36,8 +36,8 @@ const Footer = () => {
               />
             </a>
             <p className="text-muted-foreground text-sm max-w-[280px] leading-relaxed">
-              Agensi digital spesialis pengembangan website dan aplikasi
-              profesional untuk membantu skala bisnis Anda.
+              Agensi digital spesialis pengembangan website dan aplikasi profesional untuk membantu
+              skala bisnis Anda.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#home"
-                  onClick={(e) => scrollToSection(e, "#home")}
+                  onClick={(e) => scrollToSection(e, '#home')}
                   className="hover:text-primary transition-colors"
                 >
                   Beranda
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#services"
-                  onClick={(e) => scrollToSection(e, "#services")}
+                  onClick={(e) => scrollToSection(e, '#services')}
                   className="hover:text-primary transition-colors"
                 >
                   Layanan
@@ -65,7 +65,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#portfolio"
-                  onClick={(e) => scrollToSection(e, "#portfolio")}
+                  onClick={(e) => scrollToSection(e, '#portfolio')}
                   className="hover:text-primary transition-colors"
                 >
                   Portfolio
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#why-us"
-                  onClick={(e) => scrollToSection(e, "#why-us")}
+                  onClick={(e) => scrollToSection(e, '#why-us')}
                   className="hover:text-primary transition-colors"
                 >
                   Mengapa Kami
@@ -83,7 +83,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact"
-                  onClick={(e) => scrollToSection(e, "#contact")}
+                  onClick={(e) => scrollToSection(e, '#contact')}
                   className="hover:text-primary transition-colors"
                 >
                   Kontak
@@ -170,7 +170,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

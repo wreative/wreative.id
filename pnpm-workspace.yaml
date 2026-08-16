@@ -6,4 +6,4 @@ onlyBuiltDependencies:
 
 peerDependencyRules:
   allowedVersions:
-    astro: "7"
+    astro: '7'

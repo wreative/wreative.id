@@ -1,16 +1,15 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { CheckCircle2 } from 'lucide-react'
 
 const ServiceCard = ({ service, index }) => {
   return (
-    <motion.div 
+    <motion.div
       id={service.id}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, delay: index * 0.15, ease: 'easeOut' }}
       whileHover={{ y: -4, scale: 1.01 }}
       className="scroll-m-32 bg-background border border-border rounded-2xl p-8 premium-shadow transition-all duration-300 hover:border-primary/30 hover:premium-shadow-hover"
     >
@@ -20,7 +19,7 @@ const ServiceCard = ({ service, index }) => {
         </div>
         <h3 className="text-2xl m-0">{service.title}</h3>
       </div>
-      
+
       <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
         {service.description}
       </p>
@@ -46,7 +45,7 @@ const ServiceCard = ({ service, index }) => {
         </div>
       )}
     </motion.div>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

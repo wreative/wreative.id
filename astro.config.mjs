@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwindcss from '@tailwindcss/vite';
-import AstroPWA from '@vite-pwa/astro';
-import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
+import tailwindcss from '@tailwindcss/vite'
+import AstroPWA from '@vite-pwa/astro'
+import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
   site: 'https://wreative.id',
@@ -12,7 +12,11 @@ export default defineConfig({
     AstroPWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: false },
-      includeAssets: ['icons/favicon-16x16.png', 'icons/favicon-32x32.png', 'icons/apple-touch-icon.png'],
+      includeAssets: [
+        'icons/favicon-16x16.png',
+        'icons/favicon-32x32.png',
+        'icons/apple-touch-icon.png',
+      ],
       manifest: false,
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
@@ -56,4 +60,4 @@ export default defineConfig({
       },
     },
   },
-});
+})
