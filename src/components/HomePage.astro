@@ -207,65 +207,34 @@ const workflowSteps = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <div data-reveal class="group block h-full">
+      <div data-reveal class="group block h-full max-w-xl mx-auto">
+        <div
+          class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
+        >
           <div
-            class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
+            class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
           >
-            <div
-              class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
-            >
-              <Icon name="globe" class="w-10 h-10" />
-            </div>
-            <h3 class="mb-3">Website Portfolio</h3>
-            <p class="text-muted-foreground mb-8">
-              Lihat berbagai hasil desain dan pengembangan website kami.
-            </p>
-            <Button
-              as="a"
-              href="https://link.wreative.com/website-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              class="w-full sm:w-auto btn-micro-anim"
-            >
-              Lihat Portfolio Website
-              <Icon
-                name="arrow-right"
-                class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-              />
-            </Button>
+            <Icon name="layers" class="w-10 h-10" />
           </div>
-        </div>
-
-        <div data-reveal data-reveal-delay="150" class="group block h-full">
-          <div
-            class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
+          <h3 class="mb-3">Portfolio Kami</h3>
+          <p class="text-muted-foreground mb-8">
+            Lihat hasil karya kami mulai dari website, web app, hingga aplikasi mobile yang telah
+            dirilis.
+          </p>
+          <Button
+            as="a"
+            href="https://link.wreative.com/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            class="w-full sm:w-auto btn-micro-anim"
           >
-            <div
-              class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
-            >
-              <Icon name="smartphone" class="w-10 h-10" />
-            </div>
-            <h3 class="mb-3">Mobile Portfolio</h3>
-            <p class="text-muted-foreground mb-8">
-              Eksplorasi aplikasi mobile yang telah dirilis ke store.
-            </p>
-            <Button
-              as="a"
-              href="https://link.wreative.com/mobile-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              class="w-full sm:w-auto btn-micro-anim"
-            >
-              Lihat Portfolio Mobile
-              <Icon
-                name="arrow-right"
-                class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-              />
-            </Button>
-          </div>
+            Lihat Portfolio
+            <Icon
+              name="arrow-right"
+              class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+            />
+          </Button>
         </div>
       </div>
     </div>
