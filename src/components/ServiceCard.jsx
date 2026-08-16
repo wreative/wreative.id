@@ -36,9 +36,11 @@ const ServiceCard = ({ service, index }) => {
 
       {service.image && (
         <div className="rounded-xl overflow-hidden border border-border bg-muted aspect-video relative group">
-          <img 
-            src={service.image} 
-            alt={`Ilustrasi ${service.title}`} 
+          <img
+            src={service.image}
+            alt={`Ilustrasi ${service.title}`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>
