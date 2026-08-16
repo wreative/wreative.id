@@ -5,6 +5,8 @@ if ('IntersectionObserver' in window) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-reveal-delay')
+          if (delay) entry.target.style.transitionDelay = `${delay}ms`
           entry.target.classList.add('is-visible')
           io.unobserve(entry.target)
         }
@@ -14,7 +16,11 @@ if ('IntersectionObserver' in window) {
   )
   revealEls.forEach((el) => io.observe(el))
 } else {
-  revealEls.forEach((el) => el.classList.add('is-visible'))
+  revealEls.forEach((el) => {
+    const delay = el.getAttribute('data-reveal-delay')
+    if (delay) el.style.transitionDelay = `${delay}ms`
+    el.classList.add('is-visible')
+  })
 }
 
 // Sticky header: scrolled state + active-section highlight
