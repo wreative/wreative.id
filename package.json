@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev --host --port 3000",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview --host --port 3000",
     "start": "astro preview --host --port 3000",
     "lint": "eslint . --quiet",
@@ -15,6 +15,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "astro": "^7.2.2"
   },
   "devDependencies": {
