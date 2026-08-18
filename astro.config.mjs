@@ -1,7 +1,8 @@
-import { defineConfig } from 'astro/config'
+import { fileURLToPath } from 'node:url'
+
 import tailwindcss from '@tailwindcss/vite'
 import AstroPWA from '@vite-pwa/astro'
-import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   site: 'https://wreative.id',
