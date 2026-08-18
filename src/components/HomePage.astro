@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets'
+import aplikasiBerkualitas from '../assets/images/aplikasi-berkualitas.webp'
+import bangunWebsite from '../assets/images/bangun-website.webp'
 import Button from './Button.astro'
 import Icon from './Icon.astro'
 import ServiceCard from './ServiceCard.astro'
@@ -139,22 +142,30 @@ const workflowSteps = [
             data-parallax="1"
             class="absolute top-0 right-0 w-4/5 h-[80%] rounded-2xl overflow-hidden border border-border premium-shadow"
           >
-            <img
-              src="/images/aplikasi-berkualitas.webp"
+            <Image
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+              src={aplikasiBerkualitas}
               alt="Antarmuka web modern dengan statistik"
               class="w-full h-full object-cover"
             />
+
             <div
               class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay"
             >
             </div>
           </div>
+
           <div
             data-parallax="2"
             class="absolute bottom-0 left-0 w-3/5 h-[60%] rounded-2xl overflow-hidden border-4 border-background premium-shadow-hover z-10"
           >
-            <img
-              src="/images/bangun-website.webp"
+            <Image
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+              src={bangunWebsite}
               alt="Pengembangan website dan kolaborasi tim"
               class="w-full h-full object-cover"
             />
@@ -198,50 +209,50 @@ const workflowSteps = [
 
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="section-padding bg-background">
-  <div class="container-custom">
-    <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="mb-4">Eksplorasi Hasil Karya Kami</h2>
-      <p class="text-muted-foreground text-lg">
-        Kumpulan proyek yang telah kami selesaikan, menunjukkan dedikasi kami pada detail,
-        performa, dan antarmuka yang intuitif.
-      </p>
-    </div>
-
-    <div data-reveal class="group block h-full w-full">
-      <div
-        class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
-      >
-        <div
-          class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
-        >
-          <Icon name="layers" class="w-10 h-10" />
-        </div>
-
-        <h3 class="mb-3">Portfolio Kami</h3>
-
-        <p class="text-muted-foreground mb-8">
-          Lihat hasil karya kami mulai dari website, web app, hingga aplikasi mobile yang telah
-          dirilis.
+    <div class="container-custom">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="mb-4">Eksplorasi Hasil Karya Kami</h2>
+        <p class="text-muted-foreground text-lg">
+          Kumpulan proyek yang telah kami selesaikan, menunjukkan dedikasi kami pada detail,
+          performa, dan antarmuka yang intuitif.
         </p>
+      </div>
 
-        <Button
-          as="a"
-          href="https://link.wreative.com/portfolio"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="outline"
-          class="w-full sm:w-auto btn-micro-anim"
+      <div data-reveal class="group block h-full w-full">
+        <div
+          class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
         >
-          Lihat Portfolio
-          <Icon
-            name="arrow-right"
-            class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-          />
-        </Button>
+          <div
+            class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <Icon name="layers" class="w-10 h-10" />
+          </div>
+
+          <h3 class="mb-3">Portfolio Kami</h3>
+
+          <p class="text-muted-foreground mb-8">
+            Lihat hasil karya kami mulai dari website, web app, hingga aplikasi mobile yang telah
+            dirilis.
+          </p>
+
+          <Button
+            as="a"
+            href="https://link.wreative.com/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            class="w-full sm:w-auto btn-micro-anim"
+          >
+            Lihat Portfolio
+            <Icon
+              name="arrow-right"
+              class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+            />
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- WHY CHOOSE US SECTION -->
   <section id="why-us" class="section-padding bg-secondary/50 border-y border-border">
