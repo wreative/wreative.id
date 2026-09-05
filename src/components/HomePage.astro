@@ -7,6 +7,8 @@ import Icon from './Icon.astro'
 import ServiceCard from './ServiceCard.astro'
 import TestimonialSection from './TestimonialSection.astro'
 
+const { faqs = [] } = Astro.props
+
 const services = [
   {
     id: 'website',
@@ -317,6 +319,40 @@ const workflowSteps = [
 
   <!-- TESTIMONIALS SECTION -->
   <TestimonialSection />
+
+  <!-- FAQ SECTION (SEO: FAQPage schema match) -->
+  <section id="faq" class="section-padding bg-secondary/50 border-y border-border">
+    <div class="container-custom">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="mb-4">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-muted-foreground text-lg">
+          Jawaban atas pertanyaan umum seputar jasa pembuatan website dan aplikasi di Wreative.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        {
+          faqs.map((faq, i) => (
+            <details
+              data-reveal
+              data-reveal-delay={i * 60}
+              class="group border border-border rounded-xl bg-background overflow-hidden"
+              open={i === 0}
+            >
+              <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer font-medium select-none list-none">
+                <h3 class="text-base md:text-lg font-medium">{faq.q}</h3>
+                <Icon
+                  name="chevron-down"
+                  class="w-5 h-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <p class="px-6 pb-6 text-muted-foreground leading-relaxed">{faq.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
   <!-- CLOSING CTA SECTION -->
   <section

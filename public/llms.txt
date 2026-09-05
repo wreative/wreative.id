@@ -31,6 +31,15 @@ Halaman landing page utama Wreative yang menampilkan:
 - **Web Application**: Dashboard Analitik, Aplikasi SaaS, Sistem ERP & CRM, Sistem Manajemen
 - **Mobile App**: Aplikasi Android & iOS, Pengembangan dengan Flutter
 
+## FAQ
+
+- **Berapa biaya jasa pembuatan website di Wreative?** Bervariasi tergantung kompleksitas; konsultasi dan penawaran gratis via WhatsApp.
+- **Berapa lama proses pengerjaan?** Landing page 1–2 minggu, company profile 2–4 minggu, web app & mobile app custom 1–3 bulan.
+- **Teknologi yang digunakan?** Flutter (mobile cross-platform), React, Astro, dan framework modern lainnya dengan clean code.
+- **Apakah website-nya SEO friendly?** Ya: HTML semantik, structured data schema.org, performa optimal, responsif.
+- **Apakah ada maintenance?** Ya, dukungan pasca rilis: bug fix, update keamanan, pengembangan fitur.
+- **Cara memulai proyek?** Konsultasi gratis via WhatsApp, lalu proposal, timeline, dan penawaran resmi.
+
 ## Contact
 
 - WhatsApp: https://link.wreative.com/wa
@@ -39,4 +48,4 @@ Halaman landing page utama Wreative yang menampilkan:
 
 ---
 Generated manually. Edit this file to customize LLMs.txt content.
-Last updated: 2026-06-27
+Last updated: 2026-09-05

@@ -9,6 +9,33 @@ const description =
   'Bangun website dan aplikasi mobile profesional bersama Wreative. Solusi digital untuk kemajuan bisnis Anda dengan UI modern dan clean code.'
 const canonical = 'https://wreative.id/'
 const ogImage = 'https://wreative.id/icons/og-image.png'
+
+const faqs = [
+  {
+    q: 'Berapa biaya jasa pembuatan website di Wreative?',
+    a: 'Biaya jasa pembuatan website di Wreative bervariasi tergantung kompleksitas proyek. Landing page dan company profile tersedia mulai dari paket ekonomis, sedangkan web application dan sistem custom dihitung berdasarkan kebutuhan fitur. Konsultasi dan penawaran harga gratis melalui WhatsApp.',
+  },
+  {
+    q: 'Berapa lama proses pengerjaan website atau aplikasi mobile?',
+    a: 'Landing page umumnya selesai dalam 1–2 minggu, company profile 2–4 minggu, sedangkan web application dan mobile app custom membutuhkan 1–3 bulan tergantung scope. Timeline detail ditentukan pada tahap perencanaan sebelum development dimulai.',
+  },
+  {
+    q: 'Teknologi apa yang digunakan Wreative dalam development?',
+    a: 'Kami menggunakan teknologi modern seperti Flutter untuk aplikasi mobile cross-platform (Android & iOS), serta React, Astro, dan framework terkini untuk website dan web application. Semua kode ditulis dengan standar clean code yang mudah di-maintain.',
+  },
+  {
+    q: 'Apakah website yang dibuat Wreative sudah SEO friendly?',
+    a: 'Ya, setiap website yang kami bangun mengikuti standar SEO: struktur HTML semantik, structured data (schema.org), kecepatan loading optimal, responsif di semua perangkat, dan siap terindeks Google Search Console.',
+  },
+  {
+    q: 'Apakah tersedia maintenance setelah website atau aplikasi dirilis?',
+    a: 'Ya, kami menyediakan dukungan maintenance berkelanjutan pasca rilis, termasuk perbaikan bug, update keamanan, dan pengembangan fitur lanjutan sesuai kebutuhan bisnis Anda.',
+  },
+  {
+    q: 'Bagaimana cara memulai proyek bersama Wreative?',
+    a: 'Cukup hubungi kami melalui WhatsApp untuk konsultasi gratis. Kami akan mendiskusikan kebutuhan, tujuan bisnis, dan anggaran Anda, lalu menyusun proposal, timeline, dan penawaran resmi sebelum pengerjaan dimulai.',
+  },
+]
 ---
 
 <!doctype html>
@@ -97,18 +124,89 @@ const ogImage = 'https://wreative.id/icons/og-image.png'
     }`}
     />
 
-    <!-- Structured Data: LocalBusiness -->
+    <!-- Structured Data: ProfessionalService (LocalBusiness) -->
     <script
       type="application/ld+json"
       set:html={`{
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
+      "@id": "https://wreative.id/#business",
       "name": "Wreative",
-      "description": "Jasa pembuatan website dan aplikasi mobile profesional",
+      "description": "Jasa pembuatan website dan aplikasi mobile profesional di Indonesia dengan UI modern, clean code, dan performa cepat.",
       "url": "https://wreative.id",
+      "logo": "https://wreative.id/icons/favicon-512x512.png",
+      "image": "https://wreative.id/icons/og-image.png",
       "priceRange": "$$",
-      "areaServed": { "@type": "Country", "name": "Indonesia" },
-      "serviceType": ["Website Development", "Mobile App Development", "Landing Page", "Web Application"]
+      "areaServed": [
+        { "@type": "Country", "name": "Indonesia" },
+        { "@type": "City", "name": "Jakarta" },
+        { "@type": "City", "name": "Bandung" },
+        { "@type": "City", "name": "Surabaya" }
+      ],
+      "serviceType": ["Website Development", "Mobile App Development", "Landing Page", "Web Application"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Layanan Pengembangan Digital",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jasa Pembuatan Website",
+              "description": "Company profile, landing page, custom website, dan sistem internal yang cepat dan responsif."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pengembangan Web Application",
+              "description": "Dashboard analitik, aplikasi SaaS, sistem ERP & CRM, dan sistem manajemen berbasis web."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jasa Pembuatan Aplikasi Mobile",
+              "description": "Aplikasi Android & iOS cross-platform dengan Flutter, siap publish ke Play Store dan App Store."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/wreative",
+        "https://www.linkedin.com/company/wreative",
+        "https://twitter.com/wreative"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://link.wreative.com/wa",
+        "availableLanguage": ["Indonesian", "English"]
+      }
+    }`}
+    />
+
+    <!-- Structured Data: WebSite + SearchAction -->
+    <script
+      type="application/ld+json"
+      set:html={`{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://wreative.id/#website",
+      "name": "Wreative",
+      "url": "https://wreative.id/",
+      "inLanguage": "id",
+      "publisher": { "@id": "https://wreative.id/#business" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wreative.id/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }`}
     />
 
@@ -122,7 +220,34 @@ const ogImage = 'https://wreative.id/icons/og-image.png'
       "description": "Bangun website dan aplikasi mobile profesional bersama Wreative.",
       "url": "https://wreative.id/",
       "inLanguage": "id",
-      "isPartOf": { "@type": "WebSite", "@id": "https://wreative.id/#website" }
+      "isPartOf": { "@id": "https://wreative.id/#website" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "#faq"]
+      }
+    }`}
+    />
+
+    <!-- Structured Data: FAQPage -->
+    <script
+      type="application/ld+json"
+      set:html={`{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ${faqs
+          .map(
+            (f) => `{
+          "@type": "Question",
+          "name": ${JSON.stringify(f.q)},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ${JSON.stringify(f.a)}
+          }
+        }`
+          )
+          .join(',\n')}
+      ]
     }`}
     />
 
@@ -140,7 +265,7 @@ const ogImage = 'https://wreative.id/icons/og-image.png'
   <body>
     <Header />
     <div class="flex-grow">
-      <HomePage />
+      <HomePage faqs={faqs} />
     </div>
     <Footer />
     <script src="../scripts/main.js"></script>
