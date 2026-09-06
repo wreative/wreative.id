@@ -132,6 +132,11 @@ const faqs = [
       "@type": "ProfessionalService",
       "@id": "https://wreative.id/#business",
       "name": "Wreative",
+      "legalName": "PT. Wreative Digital Solutions Indonesia",
+      "identifier": [
+        { "@type": "PropertyValue", "name": "NIB", "value": "1204250004487" },
+        { "@type": "PropertyValue", "name": "NPWP", "value": "1000000001461492" }
+      ],
       "description": "Jasa pembuatan website dan aplikasi mobile profesional di Indonesia dengan UI modern, clean code, dan performa cepat.",
       "url": "https://wreative.id",
       "logo": "https://wreative.id/icons/favicon-512x512.png",
@@ -244,7 +249,7 @@ const faqs = [
             "@type": "Answer",
             "text": ${JSON.stringify(f.a)}
           }
-        }`
+        }`,
           )
           .join(',\n')}
       ]
