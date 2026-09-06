@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import Icon from './Icon.astro'
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
     title: string
     description: string
     items: string[]
-    image?: string
+    image?: { src: string; width: number; height: number; format: string }
   }
   index: number
 }
@@ -46,9 +47,11 @@ const { service, index } = Astro.props
   {
     service.image && (
       <div class="rounded-xl overflow-hidden border border-border bg-muted aspect-video relative group">
-        <img
+        <Image
           src={service.image}
           alt={`Ilustrasi ${service.title}`}
+          width={1200}
+          height={675}
           loading="lazy"
           decoding="async"
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
