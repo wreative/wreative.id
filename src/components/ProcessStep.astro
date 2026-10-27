@@ -1,0 +1,20 @@
+---
+interface Props {
+  number: string
+  title: string
+  description: string
+  index: number
+}
+
+const { number, title, description, index }: Props = Astro.props
+---
+
+<li class:list={['border-b border-border py-6 lg:border-b-0', index > 0 && 'lg:border-l lg:pl-6']}>
+  <span
+    class="mb-5 inline-flex h-10 w-10 items-center justify-center bg-primary text-sm font-semibold tabular-nums text-primary-foreground"
+  >
+    {number}
+  </span>
+  <h3 class="mb-2 text-lg">{title}</h3>
+  <p class="text-sm text-muted-foreground">{description}</p>
+</li>

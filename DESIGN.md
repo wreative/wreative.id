@@ -662,6 +662,17 @@ Fallback: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`
 - Background: transparent
 - Border Radius: `{rounded.none}` (`0px`)
 
+### Shared Components
+
+- `BenefitItem` and `ValuePoint` render informational benefits as open rows,
+  not nested cards.
+- `FeatureList`, `FAQItem`, and `ProcessStep` standardize repeated capability,
+  question, and workflow patterns across the homepage and service pages.
+- `OfferingItem` and `TestimonialQuote` preserve their distinct content roles
+  while sharing consistent square geometry and brand tokens.
+- `SocialIconLink` provides a reusable, labeled external-link target for social
+  icons.
+
 ## 5. Layout Principles
 
 ### Spacing System
@@ -954,10 +965,11 @@ enhance upward. Never design desktop-first and shrink.
   following the principle of opacity reduction or colour inversion (e.g.,
   disabled buttons at 0.5 opacity).
 
-- **No Animation / Motion Specification:** Transition timings, keyframes, and
-  motion principles were not extracted. The system does not define easing or
-  duration; use conservative defaults (e.g., 200ms ease-in-out for state
-  changes).
+- **Motion System:** Use 140ms for immediate control feedback, 240ms for routine
+  state changes, and reserve 620ms for the homepage's one-time layered-image
+  entrance. Scroll reveals are brief and capped; content stays visible without
+  JavaScript, and spatial motion is removed for reduced-motion preferences.
+  Avoid looping motion and scroll parallax.
 
 - **Accent Contrast Limitation:** `{colors.accent-1}` (`#EB5250`) is decorative
   only because none of the other supplied palette colors provides 4.5:1 text

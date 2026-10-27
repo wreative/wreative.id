@@ -27,7 +27,7 @@ const canonical = 'https://wreative.id/contact'
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#DFE4EA" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -41,15 +41,9 @@ const canonical = 'https://wreative.id/contact'
     <main class="min-h-[65vh]">
       <section class="container-custom pt-36 pb-24 lg:pt-44 lg:pb-32">
         <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div class="max-w-xl">
-            <p
-              class="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-sm font-medium text-muted-foreground"
-            >
-              <span class="h-2 w-2 rounded-full bg-[#eb5250]" aria-hidden="true"></span>
-              Hubungi Wreative
-            </p>
+          <div data-reveal class="max-w-xl">
             <h1 class="mb-6">Mari mulai percakapan.</h1>
-            <p class="mb-8 text-lg text-muted-foreground">
+            <p data-reveal data-reveal-delay="100" class="mb-8 text-lg text-muted-foreground">
               Ceritakan kebutuhan website atau aplikasi bisnis Anda. Tim Wreative siap membantu
               mendiskusikan solusi yang tepat untuk ide Anda.
             </p>
@@ -93,15 +87,15 @@ const canonical = 'https://wreative.id/contact'
 
           <aside
             aria-labelledby="consultation-title"
-            class="rounded-2xl border border-border bg-secondary/50 p-8 premium-shadow sm:p-10"
+            data-reveal
+            data-reveal-delay="140"
+            class="border border-border bg-secondary/50 p-8 sm:p-10"
           >
-            <div
-              class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-background text-primary"
-            >
+            <div class="mb-6 flex h-12 w-12 items-center justify-center bg-background text-primary">
               <Icon name="message-circle" class="h-6 w-6" />
             </div>
-            <p class="mb-2 text-sm font-semibold text-muted-foreground">Konsultasi gratis</p>
             <h2 id="consultation-title" class="mb-4 text-2xl">Hubungi kami via WhatsApp</h2>
+            <p class="-mt-2 mb-4 text-sm font-semibold text-muted-foreground">Konsultasi gratis</p>
             <p class="mb-8 text-muted-foreground">
               Klik tombol di bawah untuk membuka percakapan WhatsApp dengan tim Wreative.
             </p>

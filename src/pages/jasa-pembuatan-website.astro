@@ -1,9 +1,13 @@
 ---
 import { Image } from 'astro:assets'
+import BenefitItem from '../components/BenefitItem.astro'
 import Button from '../components/Button.astro'
+import FAQItem from '../components/FAQItem.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Icon from '../components/Icon.astro'
+import OfferingItem from '../components/OfferingItem.astro'
+import ProcessStep from '../components/ProcessStep.astro'
 import bangunWebsite from '../assets/images/bangun-website.webp'
 import '../index.css'
 
@@ -32,25 +36,21 @@ const benefits = [
 
 const offerings = [
   {
-    number: '01',
     title: 'Company Profile',
     description: 'Perkenalkan profil, layanan, dan informasi bisnis Anda secara profesional.',
     icon: 'globe',
   },
   {
-    number: '02',
     title: 'Landing Page',
     description: 'Halaman terarah untuk menyampaikan penawaran atau kebutuhan promosi.',
     icon: 'layout',
   },
   {
-    number: '03',
     title: 'Custom Website',
     description: 'Website dengan desain dan fitur yang disesuaikan dengan kebutuhan bisnis.',
     icon: 'code-2',
   },
   {
-    number: '04',
     title: 'Sistem internal',
     description: 'Sistem berbasis web untuk mendukung proses dan pengelolaan internal.',
     icon: 'layout',
@@ -110,7 +110,7 @@ const faqs = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#DFE4EA" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -135,20 +135,16 @@ const faqs = [
       <section class="container-custom pb-20 pt-36 lg:pb-28 lg:pt-44">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div class="max-w-2xl">
+            <h1 data-reveal class="mb-6">Jasa Pembuatan Website Profesional untuk Bisnis Anda</h1>
             <p
-              class="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-sm font-medium text-muted-foreground"
+              data-reveal
+              data-reveal-delay="100"
+              class="mb-8 max-w-xl text-lg text-muted-foreground"
             >
-              <span class="h-2 w-2 rounded-full bg-[#eb5250]" aria-hidden="true"></span>
-              Jasa Pembuatan Website
-            </p>
-            <h1 class="mb-6 text-4xl sm:text-5xl">
-              Jasa Pembuatan Website Profesional untuk Bisnis Anda
-            </h1>
-            <p class="mb-8 max-w-xl text-lg text-muted-foreground">
               Website yang cepat, responsif, dan sesuai kebutuhan bisnis, mulai dari company profile
               hingga sistem internal.
             </p>
-            <div class="flex flex-col gap-3 sm:flex-row">
+            <div data-reveal data-reveal-delay="180" class="flex flex-col gap-3 sm:flex-row">
               <Button
                 as="a"
                 href="https://link.wreative.com/wa"
@@ -162,7 +158,7 @@ const faqs = [
               </Button>
               <a
                 href="#layanan"
-                class="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                class="inline-flex h-12 min-h-12 items-center justify-center gap-2 border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 Lihat layanan
                 <Icon name="chevron-down" class="h-4 w-4" />
@@ -172,12 +168,9 @@ const faqs = [
 
           <div class="relative mx-auto w-full max-w-xl lg:pl-4">
             <div
-              class="absolute -left-2 top-8 h-32 w-32 rounded-full bg-primary/5 blur-3xl"
-              aria-hidden="true"
-            >
-            </div>
-            <div
-              class="relative overflow-hidden rounded-2xl border border-border bg-secondary/50 p-3 premium-shadow sm:p-4"
+              data-reveal
+              data-reveal-delay="100"
+              class="relative overflow-hidden border border-border bg-secondary p-3 sm:p-4"
             >
               <Image
                 src={bangunWebsite}
@@ -185,10 +178,10 @@ const faqs = [
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                class="aspect-[4/3] w-full rounded-xl object-cover"
+                class="aspect-[4/3] w-full object-cover"
               />
               <div
-                class="absolute bottom-7 left-7 rounded-xl border border-border/70 bg-background/95 p-4 shadow-lg backdrop-blur-sm sm:bottom-8 sm:left-8"
+                class="absolute bottom-7 left-7 border border-border bg-background p-4 sm:bottom-8 sm:left-8"
               >
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                   Dari ide hingga rilis
@@ -202,33 +195,13 @@ const faqs = [
 
       <section aria-label="Keunggulan website" class="border-y border-border bg-secondary/50">
         <div class="container-custom grid gap-0 sm:grid-cols-3">
-          {
-            benefits.map((benefit, index) => (
-              <article
-                class:list={[
-                  'flex gap-4 py-7 sm:px-6 sm:py-8',
-                  index > 0 && 'border-t border-border sm:border-l sm:border-t-0',
-                ]}
-              >
-                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-background text-primary">
-                  <Icon name={benefit.icon} class="h-5 w-5" />
-                </span>
-                <div>
-                  <h2 class="mb-1 text-base font-semibold">{benefit.title}</h2>
-                  <p class="text-sm text-muted-foreground">{benefit.description}</p>
-                </div>
-              </article>
-            ))
-          }
+          {benefits.map((benefit, index) => <BenefitItem {...benefit} index={index} />)}
         </div>
       </section>
 
       <section id="layanan" class="container-custom section-padding scroll-m-24">
         <div class="mb-12 grid gap-6 lg:grid-cols-12 lg:items-end">
           <div class="lg:col-span-7">
-            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              Pilihan layanan
-            </p>
             <h2 class="max-w-2xl">Website yang dirancang sesuai kebutuhan bisnis</h2>
           </div>
           <p class="text-muted-foreground lg:col-span-5 lg:pb-1">
@@ -236,49 +209,21 @@ const faqs = [
             web.
           </p>
         </div>
-        <div class="grid gap-5 sm:grid-cols-2">
-          {
-            offerings.map((offering) => (
-              <article class="group rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:premium-shadow-hover sm:p-8">
-                <div class="mb-8 flex items-center justify-between">
-                  <span class="text-sm font-semibold tracking-widest text-muted-foreground">
-                    {offering.number}
-                  </span>
-                  <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon name={offering.icon} class="h-6 w-6" />
-                  </span>
-                </div>
-                <h3 class="mb-3">{offering.title}</h3>
-                <p class="max-w-lg text-muted-foreground">{offering.description}</p>
-              </article>
-            ))
-          }
+        <div class="grid gap-x-8 sm:grid-cols-2">
+          {offerings.map((offering) => <OfferingItem {...offering} />)}
         </div>
       </section>
 
       <section class="section-padding border-y border-border bg-secondary/50">
         <div class="container-custom">
           <div class="mx-auto mb-12 max-w-2xl text-center">
-            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              Cara kerja
-            </p>
             <h2 class="mb-4">Langkah jelas menuju website Anda</h2>
             <p class="text-muted-foreground">
               Setiap tahap dimulai dari pemahaman kebutuhan dan ruang lingkup yang disepakati.
             </p>
           </div>
-          <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {
-              process.map((step) => (
-                <li class="relative rounded-2xl border border-border bg-background p-6">
-                  <span class="mb-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
-                    {step.number}
-                  </span>
-                  <h3 class="mb-2 text-lg">{step.title}</h3>
-                  <p class="text-sm text-muted-foreground">{step.description}</p>
-                </li>
-              ))
-            }
+          <ol class="grid gap-x-6 sm:grid-cols-2 lg:grid-cols-4">
+            {process.map((step, index) => <ProcessStep {...step} index={index} />)}
           </ol>
         </div>
       </section>
@@ -286,52 +231,23 @@ const faqs = [
       <section id="faq" class="container-custom section-padding">
         <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-4">
-            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">FAQ</p>
             <h2 class="mb-4">Pertanyaan seputar pembuatan website</h2>
             <p class="text-muted-foreground">
               Belum menemukan jawaban? Ceritakan kebutuhan Anda, kami siap membantu membahasnya.
             </p>
           </div>
-          <div class="space-y-3 lg:col-span-8">
-            {
-              faqs.map((faq) => (
-                <details class="group rounded-xl border border-border bg-background p-5 open:bg-secondary/40 sm:p-6">
-                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    {faq.question}
-                    <Icon
-                      name="chevron-down"
-                      class="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
-                    />
-                  </summary>
-                  <p class="mt-4 max-w-3xl pr-8 text-muted-foreground">{faq.answer}</p>
-                </details>
-              ))
-            }
+          <div class="border-t border-border lg:col-span-8">
+            {faqs.map((faq) => <FAQItem question={faq.question} answer={faq.answer} />)}
           </div>
         </div>
       </section>
 
       <section class="container-custom pb-20 lg:pb-28">
         <div
-          class="relative overflow-hidden rounded-2xl bg-primary px-6 py-10 text-primary-foreground sm:px-10 sm:py-14 lg:px-16"
+          class="relative overflow-hidden bg-primary px-6 py-10 text-primary-foreground sm:px-10 sm:py-14 lg:px-16"
         >
-          <div
-            class="absolute -right-12 -top-20 h-64 w-64 rounded-full border border-primary-foreground/10"
-            aria-hidden="true"
-          >
-          </div>
-          <div
-            class="absolute -right-2 -top-10 h-44 w-44 rounded-full border border-primary-foreground/10"
-            aria-hidden="true"
-          >
-          </div>
           <div class="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
-            <div class="max-w-2xl">
-              <p
-                class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground/70"
-              >
-                Mulai dari percakapan
-              </p>
+            <div data-reveal class="max-w-2xl">
               <h2 class="mb-3 text-3xl text-primary-foreground sm:text-4xl">
                 Punya rencana membuat website?
               </h2>
@@ -346,6 +262,8 @@ const faqs = [
               rel="noopener noreferrer"
               size="lg"
               variant="secondary"
+              data-reveal
+              data-reveal-delay="120"
               class="shrink-0 btn-micro-anim"
             >
               <Icon name="message-circle" class="h-5 w-5" />
@@ -365,6 +283,5 @@ const faqs = [
       </section>
     </main>
     <Footer />
-    <script src="../scripts/main.js"></script>
   </body>
 </html>

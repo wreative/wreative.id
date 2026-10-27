@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  question: string
+  answer: string
+  open?: boolean
+}
+
+const { question, answer, open = false }: Props = Astro.props
+---
+
+<details class="group border-b border-border" open={open}>
+  <summary
+    class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+  >
+    <span>{question}</span>
+    <Icon
+      name="chevron-down"
+      class="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+    />
+  </summary>
+  <p class="max-w-3xl pb-6 pr-8 text-muted-foreground">{answer}</p>
+</details>

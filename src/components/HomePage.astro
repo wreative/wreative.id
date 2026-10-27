@@ -5,11 +5,17 @@ import bangunWebsite from '../assets/images/bangun-website.webp'
 import mobileApp from '../assets/images/mobile-app.webp'
 import webApplication from '../assets/images/web-application.webp'
 import Button from './Button.astro'
+import FAQItem from './FAQItem.astro'
 import Icon from './Icon.astro'
 import ServiceCard from './ServiceCard.astro'
 import TestimonialSection from './TestimonialSection.astro'
+import ValuePoint from './ValuePoint.astro'
 
-const { faqs = [] } = Astro.props
+interface Props {
+  faqs?: { q: string; a: string }[]
+}
+
+const { faqs = [] }: Props = Astro.props
 
 const services = [
   {
@@ -114,18 +120,15 @@ const workflowSteps = [
     <div class="container-custom relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         <div class="max-w-2xl">
-          <div
-            data-reveal
-            class="inline-block mb-4 px-3 py-1 rounded-full border border-border text-sm font-medium text-muted-foreground bg-secondary/50"
-          >
-            Agensi Pengembangan Digital
-          </div>
           <h1 data-reveal data-reveal-delay="150" class="mb-6">
             Bangun <span class="text-primary">Website & Aplikasi</span> Berkualitas untuk Bisnis Anda
           </h1>
+          <p data-reveal data-reveal-delay="240" class="mb-3 text-sm font-semibold text-primary">
+            Agensi Pengembangan Digital
+          </p>
           <p
             data-reveal
-            data-reveal-delay="300"
+            data-reveal-delay="320"
             class="text-lg text-muted-foreground mb-8 max-w-lg"
           >
             Kami merancang dan mengembangkan solusi digital modern yang responsif, cepat, dan
@@ -149,8 +152,8 @@ const workflowSteps = [
 
         <div class="relative lg:h-[600px] hidden lg:block">
           <div
-            data-parallax="1"
-            class="absolute top-0 right-0 w-4/5 h-[80%] rounded-2xl overflow-hidden border border-border premium-shadow"
+            data-hero-visual="back"
+            class="absolute top-0 right-0 w-4/5 h-[80%] overflow-hidden border border-border"
           >
             <Image
               loading="eager"
@@ -160,16 +163,11 @@ const workflowSteps = [
               alt="Antarmuka web modern dengan statistik"
               class="w-full h-full object-cover"
             />
-
-            <div
-              class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay"
-            >
-            </div>
           </div>
 
           <div
-            data-parallax="2"
-            class="absolute bottom-0 left-0 w-3/5 h-[60%] rounded-2xl overflow-hidden border-4 border-background premium-shadow-hover z-10"
+            data-hero-visual="front"
+            class="absolute bottom-0 left-0 w-3/5 h-[60%] overflow-hidden border-4 border-background z-10"
           >
             <Image
               loading="eager"
@@ -190,7 +188,7 @@ const workflowSteps = [
     <div class="container-custom">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
         <div class="lg:col-span-4 relative">
-          <div data-reveal class="sticky top-32">
+          <div class="sticky top-32">
             <h2 class="mb-4">Layanan Unggulan Kami</h2>
             <p class="text-muted-foreground mb-8 text-lg">
               Solusi end-to-end dari perancangan awal hingga peluncuran sistem yang siap pakai.
@@ -211,7 +209,7 @@ const workflowSteps = [
         </div>
 
         <div class="lg:col-span-8 space-y-12">
-          {services.map((service, idx) => <ServiceCard service={service} index={idx} />)}
+          {services.map((service) => <ServiceCard service={service} />)}
         </div>
       </div>
     </div>
@@ -220,7 +218,7 @@ const workflowSteps = [
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="section-padding bg-background">
     <div class="container-custom">
-      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Eksplorasi Hasil Karya Kami</h2>
         <p class="text-muted-foreground text-lg">
           Kumpulan proyek yang telah kami selesaikan, menunjukkan dedikasi kami pada detail,
@@ -228,12 +226,12 @@ const workflowSteps = [
         </p>
       </div>
 
-      <div data-reveal class="group block h-full w-full">
+      <div class="group block h-full w-full">
         <div
-          class="rounded-2xl border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-secondary/60 hover:border-primary/20 premium-shadow hover:-translate-y-2"
+          class="border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-colors duration-300 hover:bg-secondary/60"
         >
           <div
-            class="w-20 h-20 rounded-full bg-background border border-border flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"
+            class="w-20 h-20 bg-background border border-border flex items-center justify-center mb-6 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground"
           >
             <Icon name="layers" class="w-10 h-10" />
           </div>
@@ -267,7 +265,7 @@ const workflowSteps = [
   <!-- WHY CHOOSE US SECTION -->
   <section id="why-us" class="section-padding bg-secondary/50 border-y border-border">
     <div class="container-custom">
-      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Mengapa Memilih Wreative?</h2>
         <p class="text-muted-foreground text-lg">
           Kami tidak sekadar membuat aplikasi. Kami merancang solusi teknologi yang kokoh dan
@@ -275,23 +273,13 @@ const workflowSteps = [
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ul class="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
         {
-          whyUsPoints.map((point, i) => (
-            <div
-              data-reveal
-              data-reveal-delay={i * 150}
-              class="bg-background border border-border p-6 rounded-xl premium-shadow transition-all duration-200 hover:border-primary/30 hover:-translate-y-1 hover:scale-[1.02]"
-            >
-              <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center text-primary mb-5">
-                <Icon name={point.icon} class="w-6 h-6" />
-              </div>
-              <h4 class="text-lg font-semibold mb-2">{point.title}</h4>
-              <p class="text-sm text-muted-foreground leading-relaxed">{point.desc}</p>
-            </div>
+          whyUsPoints.map((point) => (
+            <ValuePoint icon={point.icon} title={point.title} description={point.desc} />
           ))
         }
-      </div>
+      </ul>
     </div>
   </section>
 
@@ -299,7 +287,7 @@ const workflowSteps = [
   <section id="workflow" class="section-padding bg-background">
     <div class="container-custom">
       <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <div data-reveal class="sticky top-32">
+        <div class="sticky top-32">
           <h2 class="mb-4">Metodologi & Alur Kerja Terstruktur</h2>
           <p class="text-muted-foreground text-lg mb-8">
             Kami menggunakan pendekatan agil dan iteratif. Setiap fase dirancang agar transparan dan
@@ -309,12 +297,14 @@ const workflowSteps = [
 
         <div class="relative border-l border-border ml-4 lg:ml-0 pl-8 lg:pl-12 space-y-12">
           {
-            workflowSteps.map((step, i) => (
-              <div data-reveal data-reveal-delay={i * 150} class="relative group">
-                <div class="absolute -left-[41px] lg:-left-[57px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary flex items-center justify-center ring-4 ring-background transition-transform duration-300 group-hover:scale-125">
+            workflowSteps.map((step) => (
+              <div class="relative">
+                <div class="absolute -left-[41px] lg:-left-[57px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary flex items-center justify-center ring-4 ring-background">
                   <div class="w-2 h-2 rounded-full bg-primary" />
                 </div>
-                <div class="text-sm font-bold text-primary mb-1 font-mono">{step.num}</div>
+                <div class="text-sm font-bold text-primary mb-1 font-mono tabular-nums">
+                  {step.num}
+                </div>
                 <h3 class="text-xl mb-2">{step.title}</h3>
                 <p class="text-muted-foreground">{step.desc}</p>
               </div>
@@ -331,33 +321,15 @@ const workflowSteps = [
   <!-- FAQ SECTION (SEO: FAQPage schema match) -->
   <section id="faq" class="section-padding bg-secondary/50 border-y border-border">
     <div class="container-custom">
-      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Pertanyaan yang Sering Diajukan</h2>
         <p class="text-muted-foreground text-lg">
           Jawaban atas pertanyaan umum seputar jasa pembuatan website dan aplikasi di Wreative.
         </p>
       </div>
 
-      <div class="max-w-3xl mx-auto space-y-4">
-        {
-          faqs.map((faq, i) => (
-            <details
-              data-reveal
-              data-reveal-delay={i * 60}
-              class="group border border-border rounded-xl bg-background overflow-hidden"
-              open={i === 0}
-            >
-              <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer font-medium select-none list-none">
-                <h3 class="text-base md:text-lg font-medium">{faq.q}</h3>
-                <Icon
-                  name="chevron-down"
-                  class="w-5 h-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <p class="px-6 pb-6 text-muted-foreground leading-relaxed">{faq.a}</p>
-            </details>
-          ))
-        }
+      <div class="mx-auto max-w-3xl border-t border-border">
+        {faqs.map((faq, i) => <FAQItem question={faq.q} answer={faq.a} open={i === 0} />)}
       </div>
     </div>
   </section>
@@ -367,12 +339,6 @@ const workflowSteps = [
     id="contact"
     class="py-32 bg-primary text-primary-foreground text-center relative overflow-hidden"
   >
-    <div
-      class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-      style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;)"
-    >
-    </div>
-
     <div class="container-custom relative z-10">
       <div data-reveal class="max-w-3xl mx-auto">
         <h2 class="mb-6 text-primary-foreground">

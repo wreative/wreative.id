@@ -19,7 +19,7 @@ import '../index.css'
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#DFE4EA" />
     <title>404 — Halaman Tidak Ditemukan | Wreative</title>
   </head>
   <body>
@@ -36,18 +36,16 @@ import '../index.css'
           aria-labelledby="error-title"
         >
           <div class="relative z-10 max-w-xl">
+            <h1 data-reveal id="error-title" class="mb-5">Halaman tidak ditemukan</h1>
             <p
-              class="mb-4 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-muted-foreground"
+              data-reveal
+              data-reveal-delay="100"
+              class="mb-8 max-w-lg text-lg text-muted-foreground"
             >
-              <span class="h-2 w-2 rounded-full bg-[#eb5250]" aria-hidden="true"></span>
-              ERROR 404
-            </p>
-            <h1 id="error-title" class="mb-5 text-4xl sm:text-5xl">Halaman tidak ditemukan</h1>
-            <p class="mb-8 max-w-lg text-lg text-muted-foreground">
               Sepertinya tautannya kurang tepat atau halaman ini sudah dipindahkan. Mari bantu Anda
               kembali ke jalur yang benar.
             </p>
-            <div class="flex flex-col gap-3 sm:flex-row">
+            <div data-reveal data-reveal-delay="180" class="flex flex-col gap-3 sm:flex-row">
               <Button as="a" href="/" size="lg" class="btn-micro-anim"> Kembali ke Beranda </Button>
               <Button as="a" href="/#services" variant="outline" size="lg" class="btn-micro-anim">
                 Lihat Layanan
@@ -56,10 +54,9 @@ import '../index.css'
           </div>
 
           <div
+            data-reveal
             class="error-art relative mx-auto flex aspect-square w-full max-w-md items-center justify-center"
           >
-            <div class="error-orbit error-orbit-outer" aria-hidden="true"></div>
-            <div class="error-orbit error-orbit-inner" aria-hidden="true"></div>
             <div
               class="error-card relative flex h-64 w-64 flex-col items-center justify-center sm:h-72 sm:w-72"
             >
@@ -67,8 +64,6 @@ import '../index.css'
               <span class="error-card-code" aria-hidden="true">404</span>
               <span class="error-card-dot" aria-hidden="true"></span>
             </div>
-            <span class="error-spark error-spark-top" aria-hidden="true"></span>
-            <span class="error-spark error-spark-bottom" aria-hidden="true"></span>
           </div>
         </section>
       </main>
@@ -77,6 +72,7 @@ import '../index.css'
         &copy; {new Date().getFullYear()} Wreative. All rights reserved.
       </footer>
     </div>
+    <script src="../scripts/main.js"></script>
   </body>
 </html>
 
@@ -86,39 +82,17 @@ import '../index.css'
     min-height: 100vh;
     flex-direction: column;
     overflow: hidden;
-    background:
-      radial-gradient(ellipse at 78% 48%, rgb(235 82 80 / 5%), transparent 34%),
-      hsl(var(--background));
+    background: hsl(var(--background));
   }
 
   .error-art {
     isolation: isolate;
   }
 
-  .error-orbit {
-    position: absolute;
-    border: 1px solid hsl(var(--border));
-    border-radius: 9999px;
-  }
-
-  .error-orbit-outer {
-    inset: 3%;
-    transform: rotate(-24deg) scaleY(0.58);
-  }
-
-  .error-orbit-inner {
-    inset: 13%;
-    border-color: rgb(235 82 80 / 24%);
-    transform: rotate(38deg) scaleY(0.7);
-  }
-
   .error-card {
     z-index: 1;
     border: 1px solid hsl(var(--border));
-    border-radius: 1.5rem;
-    background: hsl(var(--background) / 0.88);
-    box-shadow: 0 24px 70px -32px rgb(47 53 66 / 25%);
-    transform: rotate(-5deg);
+    background: hsl(var(--background));
   }
 
   .error-card-label {
@@ -131,9 +105,9 @@ import '../index.css'
   .error-card-code {
     color: #3a455c;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(6rem, 18vw, 9rem);
-    font-weight: 700;
-    letter-spacing: -0.1em;
+    font-size: clamp(3.75rem, 12vw, 6.25rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
     line-height: 1;
     padding-right: 0.1em;
   }
@@ -144,29 +118,6 @@ import '../index.css'
     bottom: 26%;
     width: 0.7rem;
     height: 0.7rem;
-    border-radius: 50%;
     background: #eb5250;
-  }
-
-  .error-spark {
-    position: absolute;
-    z-index: 2;
-    width: 0.7rem;
-    height: 0.7rem;
-    border: 2px solid #eb5250;
-    border-radius: 50%;
-  }
-
-  .error-spark-top {
-    top: 20%;
-    right: 18%;
-  }
-
-  .error-spark-bottom {
-    bottom: 22%;
-    left: 17%;
-    width: 0.45rem;
-    height: 0.45rem;
-    border-color: #3a455c;
   }
 </style>

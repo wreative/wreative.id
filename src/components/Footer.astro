@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import Icon from './Icon.astro'
+import SocialIconLink from './SocialIconLink.astro'
 
 const isHomePage = Astro.url.pathname === '/'
 const homeSectionHref = (id: string) => `${isHomePage ? '' : '/'}#${id}`
@@ -134,43 +135,19 @@ const currentYear = new Date().getFullYear()
 
       <div>
         <h4 class="font-semibold mb-6">Sosial Media</h4>
-        <div class="flex gap-4">
-          <a
+        <div class="flex gap-3">
+          <SocialIconLink
             href="https://www.linkedin.com/company/wreative"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
-          >
-            <Icon name="linkedin" class="h-4 w-4" />
-            <span class="sr-only">LinkedIn</span>
-          </a>
-          <a
-            href="https://www.tiktok.com/@wreative"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
-          >
-            <Icon name="tiktok" class="h-4 w-4" />
-            <span class="sr-only">TikTok</span>
-          </a>
-          <a
+            label="LinkedIn"
+            icon="linkedin"
+          />
+          <SocialIconLink href="https://www.tiktok.com/@wreative" label="TikTok" icon="tiktok" />
+          <SocialIconLink
             href="https://www.instagram.com/wreative"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
-          >
-            <Icon name="instagram" class="h-4 w-4" />
-            <span class="sr-only">Instagram</span>
-          </a>
-          <a
-            href="https://youtube.com/@wreative"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all hover:-translate-y-1"
-          >
-            <Icon name="youtube" class="h-4 w-4" />
-            <span class="sr-only">YouTube</span>
-          </a>
+            label="Instagram"
+            icon="instagram"
+          />
+          <SocialIconLink href="https://youtube.com/@wreative" label="YouTube" icon="youtube" />
         </div>
       </div>
     </div>

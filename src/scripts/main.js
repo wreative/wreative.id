@@ -1,12 +1,17 @@
 // Scroll reveal (fade-up on first intersection)
 const revealEls = document.querySelectorAll('[data-reveal]')
-if ('IntersectionObserver' in window) {
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  document.documentElement.dataset.motionReady = ''
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const delay = entry.target.getAttribute('data-reveal-delay')
-          if (delay) entry.target.style.transitionDelay = `${delay}ms`
+          const delay = Number(entry.target.getAttribute('data-reveal-delay'))
+          if (Number.isFinite(delay) && delay > 0) {
+            entry.target.style.transitionDelay = `${Math.min(delay, 360)}ms`
+          }
           entry.target.classList.add('is-visible')
           io.unobserve(entry.target)
         }
@@ -15,12 +20,6 @@ if ('IntersectionObserver' in window) {
     { threshold: 0.15, rootMargin: '-50px' },
   )
   revealEls.forEach((el) => io.observe(el))
-} else {
-  revealEls.forEach((el) => {
-    const delay = el.getAttribute('data-reveal-delay')
-    if (delay) el.style.transitionDelay = `${delay}ms`
-    el.classList.add('is-visible')
-  })
 }
 
 // Sticky header: scrolled state + active-section highlight
@@ -44,35 +43,33 @@ onScroll()
 
 // Mobile menu
 const menuToggles = document.querySelectorAll('[data-menu-toggle]')
+const menuTrigger = document.querySelector('[data-menu-trigger]')
+const menuClose = document.querySelector('[data-menu-close]')
 const menu = document.querySelector('[data-menu]')
 const menuOverlay = document.querySelector('[data-menu-overlay]')
-const closeMenu = () => {
-  menu?.classList.remove('is-open')
-  menuOverlay?.classList.remove('is-open')
-  document.body.classList.remove('overflow-hidden')
+const setMenuOpen = (open) => {
+  menu?.classList.toggle('is-open', open)
+  menu?.toggleAttribute('inert', !open)
+  menu?.setAttribute('aria-hidden', String(!open))
+  menuOverlay?.classList.toggle('is-open', open)
+  document.body.classList.toggle('overflow-hidden', open)
+  menuToggles.forEach((toggle) => toggle.setAttribute('aria-expanded', String(open)))
+  if (open) {
+    menuClose?.focus()
+  } else if (menu?.contains(document.activeElement)) {
+    menuTrigger?.focus()
+  }
 }
+
+const closeMenu = () => setMenuOpen(false)
+
 menuToggles.forEach((menuToggle) => {
   menuToggle?.addEventListener('click', () => {
-    const open = menu?.classList.toggle('is-open')
-    menuOverlay?.classList.toggle('is-open', open)
-    document.body.classList.toggle('overflow-hidden', open)
+    setMenuOpen(!menu?.classList.contains('is-open'))
   })
 })
 menuOverlay?.addEventListener('click', closeMenu)
 menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeMenu()
+  if (e.key === 'Escape' && menu?.classList.contains('is-open')) closeMenu()
 })
-
-// Hero parallax
-const p1 = document.querySelector('[data-parallax="1"]')
-const p2 = document.querySelector('[data-parallax="2"]')
-window.addEventListener(
-  'scroll',
-  () => {
-    const s = Math.min(window.scrollY, 1000)
-    if (p1) p1.style.transform = `translateY(${s * 0.15}px)`
-    if (p2) p2.style.transform = `translateY(${s * -0.1}px)`
-  },
-  { passive: true },
-)
