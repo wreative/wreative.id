@@ -5,6 +5,7 @@ import FeatureList from './FeatureList.astro'
 import Icon from './Icon.astro'
 
 interface Props {
+  index: number
   service: {
     id: string
     icon: string
@@ -16,10 +17,15 @@ interface Props {
     image?: { src: string; width: number; height: number; format: string }
   }
 }
-const { service } = Astro.props
+const { service, index } = Astro.props
 ---
 
-<div id={service.id} class="scroll-m-32 border-t border-border pt-8">
+<div
+  id={service.id}
+  data-reveal
+  data-reveal-delay={index * 60}
+  class="scroll-m-32 border-t border-border pt-8"
+>
   <div class="flex items-center gap-4 mb-6">
     <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-primary">
       <Icon name={service.icon} class="w-6 h-6" />

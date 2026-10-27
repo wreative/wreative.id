@@ -12,6 +12,8 @@ const { icon, title, description, index }: Props = Astro.props
 ---
 
 <article
+  data-reveal
+  data-reveal-delay={index * 60}
   class:list={[
     'flex gap-4 py-6 sm:px-6 sm:py-8',
     index > 0 && 'border-t border-border sm:border-l sm:border-t-0',

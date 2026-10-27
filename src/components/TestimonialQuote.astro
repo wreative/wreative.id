@@ -8,12 +8,17 @@ interface Props {
   industry: string
   content: string
   initials: string
+  index: number
 }
 
-const { name, role, company, industry, content, initials }: Props = Astro.props
+const { name, role, company, industry, content, initials, index }: Props = Astro.props
 ---
 
-<article class="relative border-t border-border py-6 sm:py-8">
+<article
+  data-reveal
+  data-reveal-delay={index * 60}
+  class="relative border-t border-border py-6 sm:py-8"
+>
   <Icon name="quote" class="absolute right-0 top-6 h-8 w-8 text-primary/20 sm:top-8" />
 
   <blockquote class="relative z-10 mb-8 pr-8 text-foreground leading-relaxed">

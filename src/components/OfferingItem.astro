@@ -5,12 +5,13 @@ interface Props {
   icon: string
   title: string
   description: string
+  index: number
 }
 
-const { icon, title, description }: Props = Astro.props
+const { icon, title, description, index }: Props = Astro.props
 ---
 
-<article class="border-t border-border py-6 sm:py-8">
+<article data-reveal data-reveal-delay={index * 60} class="border-t border-border py-6 sm:py-8">
   <div class="mb-5 flex items-center gap-4">
     <span class="flex h-11 w-11 shrink-0 items-center justify-center bg-secondary text-primary">
       <Icon name={icon} class="h-5 w-5" />

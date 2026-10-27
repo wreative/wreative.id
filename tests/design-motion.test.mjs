@@ -19,6 +19,20 @@ test('all public routes load the shared interaction script and reveal content', 
   }
 })
 
+test('every content section on every public route has a reveal target', () => {
+  for (const route of routes) {
+    const html = readFileSync(new URL(route, distPath), 'utf8')
+    const sections = [...html.matchAll(/<section\b[\s\S]*?<\/section>/g)].map(
+      ([section]) => section,
+    )
+
+    assert.ok(sections.length > 0, `${route} has at least one section`)
+    sections.forEach((section, index) => {
+      assert.match(section, /\bdata-reveal(?:\s|=|>)/, `${route} section ${index + 1}`)
+    })
+  }
+})
+
 test('the built design system has reduced-motion and square-radius tokens', () => {
   const assetPath = new URL('_astro/', distPath)
   const css = readdirSync(assetPath)

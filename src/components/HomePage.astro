@@ -188,7 +188,7 @@ const workflowSteps = [
     <div class="container-custom">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
         <div class="lg:col-span-4 relative">
-          <div class="sticky top-32">
+          <div data-reveal class="sticky top-32">
             <h2 class="mb-4">Layanan Unggulan Kami</h2>
             <p class="text-muted-foreground mb-8 text-lg">
               Solusi end-to-end dari perancangan awal hingga peluncuran sistem yang siap pakai.
@@ -209,7 +209,7 @@ const workflowSteps = [
         </div>
 
         <div class="lg:col-span-8 space-y-12">
-          {services.map((service) => <ServiceCard service={service} />)}
+          {services.map((service, index) => <ServiceCard service={service} index={index} />)}
         </div>
       </div>
     </div>
@@ -218,7 +218,7 @@ const workflowSteps = [
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="section-padding bg-background">
     <div class="container-custom">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Eksplorasi Hasil Karya Kami</h2>
         <p class="text-muted-foreground text-lg">
           Kumpulan proyek yang telah kami selesaikan, menunjukkan dedikasi kami pada detail,
@@ -226,7 +226,7 @@ const workflowSteps = [
         </p>
       </div>
 
-      <div class="group block h-full w-full">
+      <div data-reveal data-reveal-delay="100" class="group block h-full w-full">
         <div
           class="border border-border bg-secondary/30 p-10 h-full flex flex-col items-center justify-center text-center transition-colors duration-300 hover:bg-secondary/60"
         >
@@ -265,7 +265,7 @@ const workflowSteps = [
   <!-- WHY CHOOSE US SECTION -->
   <section id="why-us" class="section-padding bg-secondary/50 border-y border-border">
     <div class="container-custom">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Mengapa Memilih Wreative?</h2>
         <p class="text-muted-foreground text-lg">
           Kami tidak sekadar membuat aplikasi. Kami merancang solusi teknologi yang kokoh dan
@@ -275,8 +275,13 @@ const workflowSteps = [
 
       <ul class="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
         {
-          whyUsPoints.map((point) => (
-            <ValuePoint icon={point.icon} title={point.title} description={point.desc} />
+          whyUsPoints.map((point, index) => (
+            <ValuePoint
+              icon={point.icon}
+              title={point.title}
+              description={point.desc}
+              index={index}
+            />
           ))
         }
       </ul>
@@ -287,7 +292,7 @@ const workflowSteps = [
   <section id="workflow" class="section-padding bg-background">
     <div class="container-custom">
       <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <div class="sticky top-32">
+        <div data-reveal class="sticky top-32">
           <h2 class="mb-4">Metodologi & Alur Kerja Terstruktur</h2>
           <p class="text-muted-foreground text-lg mb-8">
             Kami menggunakan pendekatan agil dan iteratif. Setiap fase dirancang agar transparan dan
@@ -297,8 +302,8 @@ const workflowSteps = [
 
         <div class="relative border-l border-border ml-4 lg:ml-0 pl-8 lg:pl-12 space-y-12">
           {
-            workflowSteps.map((step) => (
-              <div class="relative">
+            workflowSteps.map((step, index) => (
+              <div data-reveal data-reveal-delay={index * 60} class="relative">
                 <div class="absolute -left-[41px] lg:-left-[57px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary flex items-center justify-center ring-4 ring-background">
                   <div class="w-2 h-2 rounded-full bg-primary" />
                 </div>
@@ -321,7 +326,7 @@ const workflowSteps = [
   <!-- FAQ SECTION (SEO: FAQPage schema match) -->
   <section id="faq" class="section-padding bg-secondary/50 border-y border-border">
     <div class="container-custom">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div data-reveal class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="mb-4">Pertanyaan yang Sering Diajukan</h2>
         <p class="text-muted-foreground text-lg">
           Jawaban atas pertanyaan umum seputar jasa pembuatan website dan aplikasi di Wreative.
@@ -329,7 +334,11 @@ const workflowSteps = [
       </div>
 
       <div class="mx-auto max-w-3xl border-t border-border">
-        {faqs.map((faq, i) => <FAQItem question={faq.q} answer={faq.a} open={i === 0} />)}
+        {
+          faqs.map((faq, index) => (
+            <FAQItem question={faq.q} answer={faq.a} open={index === 0} index={index} />
+          ))
+        }
       </div>
     </div>
   </section>

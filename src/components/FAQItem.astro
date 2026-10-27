@@ -5,12 +5,18 @@ interface Props {
   question: string
   answer: string
   open?: boolean
+  index: number
 }
 
-const { question, answer, open = false }: Props = Astro.props
+const { question, answer, open = false, index }: Props = Astro.props
 ---
 
-<details class="group border-b border-border" open={open}>
+<details
+  data-reveal
+  data-reveal-delay={index * 60}
+  class="group border-b border-border"
+  open={open}
+>
   <summary
     class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
   >
