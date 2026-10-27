@@ -1,0 +1,162 @@
+---
+import Button from '../components/Button.astro'
+import '../index.css'
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>404 — Halaman Tidak Ditemukan | Wreative</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="container-custom flex items-center py-7">
+        <a href="/" class="brand-text-premium text-2xl" aria-label="Wreative — kembali ke beranda">
+          WREATIVE<span class="brand-dot">.</span>
+        </a>
+      </header>
+
+      <main class="container-custom flex flex-1 items-center py-12">
+        <section
+          class="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16"
+          aria-labelledby="error-title"
+        >
+          <div class="relative z-10 max-w-xl">
+            <p
+              class="mb-4 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-muted-foreground"
+            >
+              <span class="h-2 w-2 rounded-full bg-[#eb5250]" aria-hidden="true"></span>
+              ERROR 404
+            </p>
+            <h1 id="error-title" class="mb-5 text-4xl sm:text-5xl">Halaman tidak ditemukan</h1>
+            <p class="mb-8 max-w-lg text-lg text-muted-foreground">
+              Sepertinya tautannya kurang tepat atau halaman ini sudah dipindahkan. Mari bantu Anda
+              kembali ke jalur yang benar.
+            </p>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <Button as="a" href="/" size="lg" class="btn-micro-anim"> Kembali ke Beranda </Button>
+              <Button as="a" href="/#services" variant="outline" size="lg" class="btn-micro-anim">
+                Lihat Layanan
+              </Button>
+            </div>
+          </div>
+
+          <div
+            class="error-art relative mx-auto flex aspect-square w-full max-w-md items-center justify-center"
+          >
+            <div class="error-orbit error-orbit-outer" aria-hidden="true"></div>
+            <div class="error-orbit error-orbit-inner" aria-hidden="true"></div>
+            <div
+              class="error-card relative flex h-64 w-64 flex-col items-center justify-center sm:h-72 sm:w-72"
+            >
+              <span class="error-card-label">PAGE NOT FOUND</span>
+              <span class="error-card-code" aria-hidden="true">404</span>
+              <span class="error-card-dot" aria-hidden="true"></span>
+            </div>
+            <span class="error-spark error-spark-top" aria-hidden="true"></span>
+            <span class="error-spark error-spark-bottom" aria-hidden="true"></span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="container-custom py-6 text-center text-sm text-muted-foreground">
+        &copy; {new Date().getFullYear()} Wreative. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .page-shell {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 78% 48%, rgb(235 82 80 / 5%), transparent 34%),
+      hsl(var(--background));
+  }
+
+  .error-art {
+    isolation: isolate;
+  }
+
+  .error-orbit {
+    position: absolute;
+    border: 1px solid hsl(var(--border));
+    border-radius: 9999px;
+  }
+
+  .error-orbit-outer {
+    inset: 3%;
+    transform: rotate(-24deg) scaleY(0.58);
+  }
+
+  .error-orbit-inner {
+    inset: 13%;
+    border-color: rgb(235 82 80 / 24%);
+    transform: rotate(38deg) scaleY(0.7);
+  }
+
+  .error-card {
+    z-index: 1;
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.5rem;
+    background: hsl(var(--background) / 0.88);
+    box-shadow: 0 24px 70px -32px rgb(47 53 66 / 25%);
+    transform: rotate(-5deg);
+  }
+
+  .error-card-label {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+
+  .error-card-code {
+    color: #3a455c;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(6rem, 18vw, 9rem);
+    font-weight: 700;
+    letter-spacing: -0.1em;
+    line-height: 1;
+    padding-right: 0.1em;
+  }
+
+  .error-card-dot {
+    position: absolute;
+    right: 23%;
+    bottom: 26%;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #eb5250;
+  }
+
+  .error-spark {
+    position: absolute;
+    z-index: 2;
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 2px solid #eb5250;
+    border-radius: 50%;
+  }
+
+  .error-spark-top {
+    top: 20%;
+    right: 18%;
+  }
+
+  .error-spark-bottom {
+    bottom: 22%;
+    left: 17%;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-color: #3a455c;
+  }
+</style>
