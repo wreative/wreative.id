@@ -1,0 +1,411 @@
+---
+import { Image } from 'astro:assets'
+import Button from '../components/Button.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Icon from '../components/Icon.astro'
+import mobileApp from '../assets/images/mobile-app.webp'
+import webApplication from '../assets/images/web-application.webp'
+import '../index.css'
+
+const title = 'Jasa Pembuatan Aplikasi Mobile & Web | Wreative'
+const description =
+  'Jasa pembuatan aplikasi Android, iOS, dan web application untuk membantu bisnis mengembangkan layanan dan mengotomatisasi proses.'
+const canonical = 'https://wreative.id/jasa-pembuatan-aplikasi'
+
+const benefits = [
+  {
+    icon: 'smartphone',
+    title: 'Pengalaman yang mudah digunakan',
+    description: 'Antarmuka dirancang dengan memperhatikan kebutuhan pengguna.',
+  },
+  {
+    icon: 'code-2',
+    title: 'Clean code',
+    description: 'Struktur kode yang rapi dan mudah di-maintain.',
+  },
+  {
+    icon: 'wrench',
+    title: 'Dukungan pasca rilis',
+    description: 'Tersedia maintenance untuk mendukung aplikasi setelah diluncurkan.',
+  },
+]
+
+const process = [
+  {
+    number: '01',
+    title: 'Diskusi kebutuhan',
+    description: 'Bahas tujuan dan kebutuhan bisnis Anda.',
+  },
+  {
+    number: '02',
+    title: 'Perencanaan & desain',
+    description: 'Susun ruang lingkup dan rancangan UI/UX.',
+  },
+  {
+    number: '03',
+    title: 'Development & testing',
+    description: 'Bangun fitur yang disepakati dan lakukan pengujian.',
+  },
+  {
+    number: '04',
+    title: 'Launching',
+    description: 'Siapkan aplikasi untuk dirilis ke platform yang dituju.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'Aplikasi apa saja yang dikembangkan Wreative?',
+    answer:
+      'Kami mengembangkan aplikasi mobile untuk Android dan iOS, serta web application seperti dashboard, SaaS, ERP/CRM, dan sistem manajemen.',
+  },
+  {
+    question: 'Teknologi apa yang digunakan untuk membuat aplikasi?',
+    answer:
+      'Aplikasi mobile dapat dikembangkan menggunakan Flutter untuk Android dan iOS. Teknologi untuk web application dibahas berdasarkan kebutuhan dan ruang lingkup proyek.',
+  },
+  {
+    question: 'Berapa biaya pembuatan aplikasi?',
+    answer:
+      'Biaya menyesuaikan fitur, platform, dan ruang lingkup proyek. Hubungi tim Wreative untuk konsultasi gratis dan pembahasan kebutuhan Anda.',
+  },
+  {
+    question: 'Apakah ada maintenance setelah aplikasi diluncurkan?',
+    answer:
+      'Ya. Dukungan maintenance pasca rilis tersedia untuk perbaikan bug, pembaruan keamanan, dan pengembangan fitur lanjutan sesuai kebutuhan.',
+  },
+]
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="id_ID" />
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-P1RLZGG7G8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-P1RLZGG7G8')
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main class="overflow-hidden">
+      <section class="container-custom pb-20 pt-36 lg:pb-28 lg:pt-44">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div class="max-w-2xl">
+            <p
+              class="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-sm font-medium text-muted-foreground"
+            >
+              <span class="h-2 w-2 rounded-full bg-[#eb5250]" aria-hidden="true"></span>
+              Jasa Pembuatan Aplikasi
+            </p>
+            <h1 class="mb-6 text-4xl sm:text-5xl">
+              Jasa Pembuatan Aplikasi Mobile dan Web untuk Bisnis
+            </h1>
+            <p class="mb-8 max-w-xl text-lg text-muted-foreground">
+              Solusi aplikasi yang dibangun sesuai kebutuhan, dari aplikasi Android dan iOS hingga
+              web application untuk mendukung proses bisnis.
+            </p>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <Button
+                as="a"
+                href="https://link.wreative.com/wa"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+                class="btn-micro-anim"
+              >
+                <Icon name="message-circle" class="h-5 w-5" />
+                Diskusikan Proyek via WhatsApp
+              </Button>
+              <a
+                href="#jenis-aplikasi"
+                class="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-input bg-background px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                Lihat kapabilitas
+                <Icon name="chevron-down" class="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-xl lg:pl-4">
+            <div
+              class="absolute -right-4 top-4 h-40 w-40 rounded-full bg-primary/5 blur-3xl"
+              aria-hidden="true"
+            >
+            </div>
+            <div class="relative grid grid-cols-[0.8fr_1.2fr] items-center gap-3 sm:gap-4">
+              <div
+                class="relative z-10 -mr-7 overflow-hidden rounded-2xl border-4 border-background bg-secondary premium-shadow sm:-mr-10"
+              >
+                <Image
+                  src={mobileApp}
+                  alt="Contoh tampilan aplikasi mobile"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="aspect-[3/4] w-full object-cover"
+                />
+                <div
+                  class="absolute bottom-3 left-3 right-3 rounded-lg bg-background/95 px-3 py-2 text-xs font-semibold shadow backdrop-blur-sm"
+                >
+                  Aplikasi mobile
+                </div>
+              </div>
+              <div
+                class="overflow-hidden rounded-2xl border border-border bg-secondary/50 p-2 premium-shadow sm:p-3"
+              >
+                <Image
+                  src={webApplication}
+                  alt="Tampilan dashboard web application"
+                  loading="eager"
+                  decoding="async"
+                  class="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+                <p
+                  class="px-2 pb-1 pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                >
+                  Web application
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-label="Keunggulan pengembangan aplikasi"
+        class="border-y border-border bg-secondary/50"
+      >
+        <div class="container-custom grid gap-0 sm:grid-cols-3">
+          {
+            benefits.map((benefit, index) => (
+              <article
+                class:list={[
+                  'flex gap-4 py-7 sm:px-6 sm:py-8',
+                  index > 0 && 'border-t border-border sm:border-l sm:border-t-0',
+                ]}
+              >
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-background text-primary">
+                  <Icon name={benefit.icon} class="h-5 w-5" />
+                </span>
+                <div>
+                  <h2 class="mb-1 text-base font-semibold">{benefit.title}</h2>
+                  <p class="text-sm text-muted-foreground">{benefit.description}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="jenis-aplikasi" class="container-custom section-padding scroll-m-24">
+        <div class="mb-12 grid gap-6 lg:grid-cols-12 lg:items-end">
+          <div class="lg:col-span-7">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Kapabilitas
+            </p>
+            <h2 class="max-w-2xl">Aplikasi yang mendukung cara bisnis Anda bekerja</h2>
+          </div>
+          <p class="text-muted-foreground lg:col-span-5 lg:pb-1">
+            Pilih platform dan fitur sesuai kebutuhan pengguna dan proses bisnis Anda.
+          </p>
+        </div>
+        <div class="grid gap-5 lg:grid-cols-2">
+          <article class="rounded-2xl border border-border bg-background p-6 premium-shadow sm:p-8">
+            <div class="mb-6 flex items-center gap-4">
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary"
+              >
+                <Icon name="smartphone" class="h-6 w-6" />
+              </span>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Android & iOS
+                </p>
+                <h3>Aplikasi mobile</h3>
+              </div>
+            </div>
+            <p class="mb-6 text-muted-foreground">
+              Jangkau pelanggan melalui aplikasi mobile yang user-friendly, dirancang untuk
+              kebutuhan perangkat Android dan iOS.
+            </p>
+            <ul class="grid gap-3 sm:grid-cols-2">
+              {
+                [
+                  'Aplikasi Android & iOS',
+                  'Pengembangan dengan Flutter',
+                  'Siap publish ke Play Store',
+                  'Siap publish ke App Store',
+                ].map((item) => (
+                  <li class="flex items-start gap-3 text-sm font-medium">
+                    <Icon name="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-border bg-background p-6 premium-shadow sm:p-8">
+            <div class="mb-6 flex items-center gap-4">
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary"
+              >
+                <Icon name="layout" class="h-6 w-6" />
+              </span>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Sistem berbasis web
+                </p>
+                <h3>Web application</h3>
+              </div>
+            </div>
+            <p class="mb-6 text-muted-foreground">
+              Otomatisasi proses bisnis melalui aplikasi web kustom dengan fitur yang disesuaikan
+              dengan alur kerja.
+            </p>
+            <ul class="grid gap-3 sm:grid-cols-2">
+              {
+                ['Dashboard analitik', 'Aplikasi SaaS', 'Sistem ERP & CRM', 'Sistem manajemen'].map(
+                  (item) => (
+                    <li class="flex items-start gap-3 text-sm font-medium">
+                      <Icon name="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                      {item}
+                    </li>
+                  ),
+                )
+              }
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-padding border-y border-border bg-secondary/50">
+        <div class="container-custom">
+          <div class="mx-auto mb-12 max-w-2xl text-center">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Cara kerja
+            </p>
+            <h2 class="mb-4">Dari kebutuhan hingga aplikasi siap dirilis</h2>
+            <p class="text-muted-foreground">
+              Proses dimulai dengan memahami kebutuhan dan ruang lingkup proyek Anda.
+            </p>
+          </div>
+          <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              process.map((step) => (
+                <li class="rounded-2xl border border-border bg-background p-6">
+                  <span class="mb-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                    {step.number}
+                  </span>
+                  <h3 class="mb-2 text-lg">{step.title}</h3>
+                  <p class="text-sm text-muted-foreground">{step.description}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </section>
+
+      <section id="faq" class="container-custom section-padding">
+        <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-4">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">FAQ</p>
+            <h2 class="mb-4">Pertanyaan seputar pembuatan aplikasi</h2>
+            <p class="text-muted-foreground">
+              Punya pertanyaan lain? Diskusikan langsung dengan tim Wreative.
+            </p>
+          </div>
+          <div class="space-y-3 lg:col-span-8">
+            {
+              faqs.map((faq) => (
+                <details class="group rounded-xl border border-border bg-background p-5 open:bg-secondary/40 sm:p-6">
+                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    {faq.question}
+                    <Icon
+                      name="chevron-down"
+                      class="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                    />
+                  </summary>
+                  <p class="mt-4 max-w-3xl pr-8 text-muted-foreground">{faq.answer}</p>
+                </details>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="container-custom pb-20 lg:pb-28">
+        <div
+          class="relative overflow-hidden rounded-2xl bg-primary px-6 py-10 text-primary-foreground sm:px-10 sm:py-14 lg:px-16"
+        >
+          <div
+            class="absolute -right-12 -top-20 h-64 w-64 rounded-full border border-primary-foreground/10"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="absolute -right-2 -top-10 h-44 w-44 rounded-full border border-primary-foreground/10"
+            aria-hidden="true"
+          >
+          </div>
+          <div class="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
+            <div class="max-w-2xl">
+              <p
+                class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground/70"
+              >
+                Mulai dari percakapan
+              </p>
+              <h2 class="mb-3 text-3xl text-primary-foreground sm:text-4xl">
+                Punya rencana membuat aplikasi?
+              </h2>
+              <p class="text-primary-foreground/80">
+                Ceritakan kebutuhan mobile atau web application bisnis Anda kepada tim Wreative.
+              </p>
+            </div>
+            <Button
+              as="a"
+              href="https://link.wreative.com/wa"
+              target="_blank"
+              rel="noopener noreferrer"
+              size="lg"
+              variant="secondary"
+              class="shrink-0 btn-micro-anim"
+            >
+              <Icon name="message-circle" class="h-5 w-5" />
+              Konsultasi Gratis
+            </Button>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-muted-foreground">
+          Sedang mencari website bisnis? Lihat
+          <a
+            href="/jasa-pembuatan-website"
+            class="font-semibold text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-primary"
+          >
+            jasa pembuatan website
+          </a>.
+        </p>
+      </section>
+    </main>
+    <Footer />
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

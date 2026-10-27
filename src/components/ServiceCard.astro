@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import Button from './Button.astro'
 import Icon from './Icon.astro'
 
 interface Props {
@@ -9,6 +10,8 @@ interface Props {
     title: string
     description: string
     items: string[]
+    href?: string
+    linkLabel?: string
     image?: { src: string; width: number; height: number; format: string }
   }
   index: number
@@ -43,6 +46,14 @@ const { service, index } = Astro.props
       ))
     }
   </div>
+
+  {
+    service.href && (
+      <Button as="a" href={service.href} variant="outline" class="mb-8 btn-micro-anim">
+        {service.linkLabel}
+      </Button>
+    )
+  }
 
   {
     service.image && (
