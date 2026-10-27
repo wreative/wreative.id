@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets'
 import Icon from './Icon.astro'
 
+const isHomePage = Astro.url.pathname === '/'
+const homeSectionHref = (id: string) => `${isHomePage ? '' : '/'}#${id}`
 const currentYear = new Date().getFullYear()
 ---
 
@@ -9,7 +11,10 @@ const currentYear = new Date().getFullYear()
   <div class="container-custom">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       <div class="lg:col-span-1">
-        <a href="#home" class="inline-block mb-6 transition-opacity hover:opacity-80">
+        <a
+          href={homeSectionHref('home')}
+          class="inline-block mb-6 transition-opacity hover:opacity-80"
+        >
           <Image
             class="h-24 w-auto object-contain"
             src="https://avatars.githubusercontent.com/u/75348178?s=200&v=4"
@@ -27,11 +32,27 @@ const currentYear = new Date().getFullYear()
       <div>
         <h4 class="font-semibold mb-6">Navigasi</h4>
         <ul class="space-y-4 text-sm text-muted-foreground">
-          <li><a href="#home" class="hover:text-primary transition-colors">Beranda</a></li>
-          <li><a href="#services" class="hover:text-primary transition-colors">Layanan</a></li>
-          <li><a href="#portfolio" class="hover:text-primary transition-colors">Portfolio</a></li>
-          <li><a href="#why-us" class="hover:text-primary transition-colors">Mengapa Kami</a></li>
-          <li><a href="#contact" class="hover:text-primary transition-colors">Kontak</a></li>
+          <li>
+            <a href={homeSectionHref('home')} class="hover:text-primary transition-colors"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a href={homeSectionHref('services')} class="hover:text-primary transition-colors"
+              >Layanan</a
+            >
+          </li>
+          <li>
+            <a href={homeSectionHref('portfolio')} class="hover:text-primary transition-colors"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href={homeSectionHref('why-us')} class="hover:text-primary transition-colors"
+              >Mengapa Kami</a
+            >
+          </li>
+          <li><a href="/contact" class="hover:text-primary transition-colors">Kontak</a></li>
         </ul>
       </div>
 
@@ -52,7 +73,7 @@ const currentYear = new Date().getFullYear()
               />
             </a>
           </li>
-           <li>
+          <li>
             <a
               href="https://link.wreative.com/play-store"
               target="_blank"
@@ -66,7 +87,7 @@ const currentYear = new Date().getFullYear()
               />
             </a>
           </li>
-           <li>
+          <li>
             <a
               href="https://link.wreative.com/app-store"
               target="_blank"
@@ -123,7 +144,7 @@ const currentYear = new Date().getFullYear()
             <Icon name="linkedin" class="h-4 w-4" />
             <span class="sr-only">LinkedIn</span>
           </a>
-            <a
+          <a
             href="https://www.tiktok.com/@wreative"
             target="_blank"
             rel="noopener noreferrer"

@@ -2,12 +2,16 @@
 import Button from './Button.astro'
 import Icon from './Icon.astro'
 
+const isHomePage = Astro.url.pathname === '/'
+const homeSectionHref = (id: string) => `${isHomePage ? '' : '/'}#${id}`
+const consultationHref = isHomePage ? '#contact' : 'https://link.wreative.com/wa'
+
 const navLinks = [
-  { name: 'Beranda', href: '#home' },
-  { name: 'Layanan', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Mengapa Kami', href: '#why-us' },
-  { name: 'Testimoni', href: '#testimonials' },
+  { name: 'Beranda', href: homeSectionHref('home') },
+  { name: 'Layanan', href: homeSectionHref('services') },
+  { name: 'Portfolio', href: homeSectionHref('portfolio') },
+  { name: 'Mengapa Kami', href: homeSectionHref('why-us') },
+  { name: 'Testimoni', href: homeSectionHref('testimonials') },
 ]
 ---
 
@@ -16,7 +20,7 @@ const navLinks = [
   class="fixed top-0 w-full z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
 >
   <div class="container-custom flex items-center justify-between">
-    <a href="#home" class="transition-opacity hover:opacity-80 flex items-center">
+    <a href={homeSectionHref('home')} class="transition-opacity hover:opacity-80 flex items-center">
       <span class="text-2xl brand-text-premium">WREATIVE<span class="brand-dot">.</span></span>
     </a>
 
@@ -32,7 +36,13 @@ const navLinks = [
           </a>
         ))
       }
-      <Button as="a" href="#contact" class="ml-4 font-medium btn-micro-anim">
+      <Button
+        as="a"
+        href={consultationHref}
+        target={isHomePage ? undefined : '_blank'}
+        rel={isHomePage ? undefined : 'noopener noreferrer'}
+        class="ml-4 font-medium btn-micro-anim"
+      >
         Konsultasi Gratis
       </Button>
     </nav>
@@ -82,7 +92,13 @@ const navLinks = [
   </nav>
 
   <div class="mt-auto mb-8">
-    <Button as="a" href="#contact" class="w-full justify-between btn-micro-anim">
+    <Button
+      as="a"
+      href={consultationHref}
+      target={isHomePage ? undefined : '_blank'}
+      rel={isHomePage ? undefined : 'noopener noreferrer'}
+      class="w-full justify-between btn-micro-anim"
+    >
       Konsultasi Gratis
       <Icon name="arrow-right" class="h-4 w-4" />
     </Button>
