@@ -30,3 +30,15 @@ test('the built design system has reduced-motion and square-radius tokens', () =
   assert.match(css, /data-motion-ready/)
   assert.match(css, /--radius-full:\s*0px/)
 })
+
+test('the default page canvas and footer use white background tokens', () => {
+  const sourceCss = readFileSync(new URL('../src/index.css', import.meta.url), 'utf8')
+  const design = readFileSync(new URL('../DESIGN.md', import.meta.url), 'utf8')
+  const footer = readFileSync(new URL('../src/components/Footer.astro', import.meta.url), 'utf8')
+
+  assert.match(sourceCss, /:root\s*\{[^}]*--background:\s*0\s+0%\s+100%/s)
+  assert.match(sourceCss, /:root\s*\{[^}]*--card:\s*0\s+0%\s+100%/s)
+  assert.match(design, /canvas:\s*'#FFFFFF'/)
+  assert.match(design, /bg:\s*'#FFFFFF'/)
+  assert.match(footer, /<footer class="bg-background/)
+})

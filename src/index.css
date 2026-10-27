@@ -5,11 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 212.7 20.8% 89.6%;
+  --background: 0 0% 100%;
   --foreground: 221 16.8% 22.2%;
 
   --primary: 220.6 22.7% 29.4%;
-  --primary-foreground: 212.7 20.8% 89.6%;
+  --primary-foreground: 0 0% 100%;
 
   --secondary: 213 22% 96%;
   --secondary-foreground: 221 16.8% 22.2%;
@@ -20,10 +20,10 @@
   --accent: 213 22% 96%;
   --accent-foreground: 220.6 22.7% 29.4%;
 
-  --card: 212.7 20.8% 89.6%;
+  --card: 0 0% 100%;
   --card-foreground: 221 16.8% 22.2%;
 
-  --popover: 212.7 20.8% 89.6%;
+  --popover: 0 0% 100%;
   --popover-foreground: 221 16.8% 22.2%;
 
   --border: 220.6 22.7% 29.4%;

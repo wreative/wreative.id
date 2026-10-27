@@ -11,6 +11,8 @@ description: |
   unfussy—avoiding decoration in favor of direct communication and functional
   clarity. This is a system built for a B2B technical audience that values
   speed, professionalism, and intellectual honesty over visual ornament.
+  The default light-theme page canvas and footer must remain pure white
+  (#FFFFFF); lightly tinted secondary sections may remain to distinguish content.
 source:
   url: 'https://wreative.com/'
   guidebook: 'https://labs.google.com/u/0/pomelli/brand_book/asunQCvdRNM5fhZelQg4Um'
@@ -21,8 +23,8 @@ source:
 colors:
   primary: '#3A455C'
   link: '#3A455C'
-  canvas: '#DFE4EA'
-  on-primary: '#DFE4EA'
+  canvas: '#FFFFFF'
+  on-primary: '#FFFFFF'
   ink: '#2F3542'
   body: '#2F3542'
   accent-1: '#EB5250'
@@ -178,9 +180,9 @@ elevationStrategy: progressive
 themes:
   derived: dark # dark theme derived from the supplied brand palette
   light:
-    bg: '#DFE4EA'
-    surface: '#DFE4EA'
-    surfaceRaised: '#DFE4EA'
+    bg: '#FFFFFF'
+    surface: '#FFFFFF'
+    surfaceRaised: '#FFFFFF'
     text: '#2F3542'
     textMuted: '#3A455C'
     border: '#3A455C'
