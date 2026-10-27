@@ -15,3 +15,9 @@ const themeColor = '#DFE4EA'
 <meta name="application-name" content="Wreative" />
 <meta name="msapplication-TileColor" content={themeColor} />
 <script is:inline src="/registerSW.js"></script>
+<script is:inline>
+  // Hide reveal targets before first paint so page loads animate in instead of flashing
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.dataset.motionReady = ''
+  }
+</script>
