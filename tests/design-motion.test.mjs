@@ -42,3 +42,14 @@ test('the default page canvas and footer use white background tokens', () => {
   assert.match(design, /bg:\s*'#FFFFFF'/)
   assert.match(footer, /<footer class="bg-background/)
 })
+
+test('service page cross-links have whitespace before their links', () => {
+  const applicationPage = readFileSync(
+    new URL('jasa-pembuatan-aplikasi/index.html', distPath),
+    'utf8',
+  )
+  const websitePage = readFileSync(new URL('jasa-pembuatan-website/index.html', distPath), 'utf8')
+
+  assert.match(applicationPage, /Lihat\s+<a href="\/jasa-pembuatan-website"/)
+  assert.match(websitePage, /Lihat\s+<a href="\/jasa-pembuatan-aplikasi"/)
+})
