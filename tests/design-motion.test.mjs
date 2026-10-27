@@ -31,6 +31,43 @@ test('the built design system has reduced-motion and square-radius tokens', () =
   assert.match(css, /--radius-full:\s*0px/)
 })
 
+test('motion transitions use shared timings and reduce spatial movement only', () => {
+  const sourceCss = readFileSync(new URL('../src/index.css', import.meta.url), 'utf8')
+
+  assert.match(sourceCss, /--motion-quick:\s*140ms/)
+  assert.match(sourceCss, /--motion-standard:\s*240ms/)
+  assert.match(sourceCss, /--motion-emphasis:\s*620ms/)
+  assert.match(
+    sourceCss,
+    /\[data-header\]\s*\{[^}]*background-color var\(--motion-quick\)[^}]*border-color var\(--motion-quick\)/s,
+  )
+  assert.match(
+    sourceCss,
+    /\[data-nav-link\]\s*\{[^}]*transition:\s*color var\(--motion-quick\) ease-out;/s,
+  )
+  assert.match(
+    sourceCss,
+    /\[data-menu\]\s*\{\s*transition:\s*translate var\(--motion-standard\) var\(--ease-out\);\s*\}/,
+  )
+  assert.match(
+    sourceCss,
+    /\[data-menu-overlay\]\s*\{[^}]*transition:\s*opacity var\(--motion-standard\) ease-out;/s,
+  )
+  assert.match(
+    sourceCss,
+    /html\[data-motion-ready\]\s+\[data-reveal\]:not\(\.is-visible\)\s*\{[^}]*opacity:\s*1;[^}]*transform:\s*none;[^}]*transition:\s*none;/s,
+  )
+  assert.match(
+    sourceCss,
+    /\.btn-micro-anim:hover,\s*\.btn-micro-anim:active\s*\{[^}]*transform:\s*none;/s,
+  )
+  assert.match(
+    sourceCss,
+    /\[data-hero-visual\]\s*\{[^}]*animation:\s*none !important;[^}]*clip-path:\s*none;[^}]*transform:\s*none;/s,
+  )
+  assert.doesNotMatch(sourceCss, /transition-duration:\s*1ms !important/)
+})
+
 test('the default page canvas and footer use white background tokens', () => {
   const sourceCss = readFileSync(new URL('../src/index.css', import.meta.url), 'utf8')
   const design = readFileSync(new URL('../DESIGN.md', import.meta.url), 'utf8')

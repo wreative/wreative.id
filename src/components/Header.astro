@@ -15,10 +15,7 @@ const navLinks = [
 ]
 ---
 
-<header
-  data-header
-  class="fixed top-0 w-full z-50 border-b bg-transparent border-transparent py-5 transition-colors duration-200"
->
+<header data-header class="fixed top-0 w-full z-50 border-b bg-transparent border-transparent py-5">
   <div class="container-custom flex items-center justify-between">
     <a href={homeSectionHref('home')} class="transition-opacity hover:opacity-80 flex items-center">
       <span class="text-2xl brand-text-premium">WREATIVE<span class="brand-dot">.</span></span>
@@ -30,7 +27,7 @@ const navLinks = [
           <a
             data-nav-link
             href={link.href}
-            class="text-sm font-medium transition-colors duration-150 relative py-1 text-muted-foreground hover:text-primary"
+            class="text-sm font-medium relative py-1 text-muted-foreground hover:text-primary"
           >
             {link.name}
           </a>
@@ -71,7 +68,7 @@ const navLinks = [
   aria-label="Navigasi seluler"
   aria-hidden="true"
   inert
-  class="fixed inset-y-0 right-0 z-50 flex w-[min(22rem,100vw)] translate-x-full flex-col border-l border-border bg-background p-6 transition-transform duration-300"
+  class="fixed inset-y-0 right-0 z-50 flex w-[min(22rem,100vw)] translate-x-full flex-col border-l border-border bg-background p-6"
 >
   <button
     data-menu-toggle
