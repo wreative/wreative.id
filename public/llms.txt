@@ -2,7 +2,10 @@
 
 ## Pages
 
-- [/](#page-home): Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas
+- [Beranda](https://wreative.id/): Wreative - Jasa Pembuatan Website & Aplikasi Berkualitas
+- [Jasa Pembuatan Website](https://wreative.id/jasa-pembuatan-website): company profile, landing page, website custom, sistem internal
+- [Jasa Pembuatan Aplikasi](https://wreative.id/jasa-pembuatan-aplikasi): aplikasi mobile Android/iOS (Flutter), web app, dashboard, SaaS, ERP/CRM
+- [Kontak](https://wreative.id/contact): konsultasi gratis via WhatsApp
 
 ## Website (/)
 

@@ -10,6 +10,16 @@ const title = 'Kontak Wreative | Konsultasi Website & Aplikasi'
 const description =
   'Hubungi Wreative untuk konsultasi gratis pembuatan website dan aplikasi mobile melalui WhatsApp.'
 const canonical = 'https://wreative.id/contact'
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'ContactPage', name: title, description, url: canonical, inLanguage: 'id-ID', about: { '@type': 'Organization', '@id': 'https://wreative.id/#organization', name: 'Wreative', url: 'https://wreative.id' } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://wreative.id/' },
+      { '@type': 'ListItem', position: 2, name: 'Kontak', item: canonical },
+    ] },
+  ],
+}
 ---
 
 <!doctype html>
@@ -36,6 +46,7 @@ const canonical = 'https://wreative.id/contact'
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <Header />
