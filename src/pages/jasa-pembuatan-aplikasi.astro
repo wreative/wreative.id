@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Icon from '../components/Icon.astro'
 import ProcessStep from '../components/ProcessStep.astro'
+import PwaHead from '../components/PwaHead.astro'
 import mobileApp from '../assets/images/mobile-app.webp'
 import webApplication from '../assets/images/web-application.webp'
 import '../index.css'
@@ -88,7 +89,7 @@ const faqs = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#DFE4EA" />
+    <PwaHead />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

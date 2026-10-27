@@ -8,6 +8,7 @@ import Header from '../components/Header.astro'
 import Icon from '../components/Icon.astro'
 import OfferingItem from '../components/OfferingItem.astro'
 import ProcessStep from '../components/ProcessStep.astro'
+import PwaHead from '../components/PwaHead.astro'
 import bangunWebsite from '../assets/images/bangun-website.webp'
 import '../index.css'
 
@@ -110,7 +111,7 @@ const faqs = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#DFE4EA" />
+    <PwaHead />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
