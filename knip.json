@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "ignore": [".agents/**", ".remember/**"],
-  "entry": ["src/scripts/main.js"],
+  "ignore": [".agents/**"],
+  "entry": ["src/scripts/main.js", "tests/*.test.mjs"],
+  "ignoreDependencies": ["@biomejs/biome"],
   "tags": ["-lintignore"]
 }
