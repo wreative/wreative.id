@@ -9,6 +9,7 @@ import '../index.css'
 const title = 'Kontak Wreative | Konsultasi Website & Aplikasi'
 const description =
   'Hubungi Wreative untuk konsultasi gratis pembuatan website dan aplikasi mobile melalui WhatsApp.'
+const ogImage = 'https://wreative.id/icons/og-image.png'
 const canonical = 'https://wreative.id/contact'
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -46,6 +47,15 @@ const jsonLd = {
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content="Wreative" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
